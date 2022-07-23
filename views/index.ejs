@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="zh-tw">
+
+<head>
+    <meta charset="utf-8">
+    <title>Out Come</title>
+</head>
+
+<body>
+    <div align="center">
+        <form action="/response" method="post" name="Form" onsubmit="return inputCheck()">
+            <h1>Out Come表單</h1>
+            <p>姓名:<input type="text" name="user" required="required"> 年齡:<input type="number" name="age" required="required"> 職業:<input type="text" name="career" required="required">
+            </p>
+            <table border="1">
+                <tr>
+                    <th>優先排序(1~12)</th>
+                    <th> </th>
+                    <th>現況滿意度</th>
+                </tr>
+                <tr>
+                    <!--獨立性-->
+                    <td><input type="number" name="sortIndependence" max="12" min="1" required="required"></td>
+                    <td>獨立性/自由做你自己想做的事; 能擺脫他人影響</td>
+                    <td><input type="number" max="5" name="answerIndependence" min="1" required="required"></td>
+                </tr>
+                <tr>
+                    <!--認同感-->
+                    <td><input type="number" name="sortIdentity" max="12" min="1" required="required"></td>
+                    <td>認同感/成就被肯定，表現有獎勵。</td>
+                    <td><input type="number" max="5" name="answerIdentity" min="1" required="required"></td>
+                </tr>
+                <tr>
+                    <!--成就感-->
+                    <td><input type="number" name="sortAchievement" max="12" min="1" required="required"></td>
+                    <td>成就感/成功完成工作，克服障礙，達成目標。</td>
+                    <td><input type="number" max="5" name="answerAchievement" min="1" required="required"></td>
+                </tr>
+                <tr>
+                    <!--休閒時間-->
+                    <td><input type="number" name="sortFreeTime" max="12" min="1" required="required"></td>
+                    <td>休閒時間/從事工作以外你喜歡的休閒活動。</td>
+                    <td><input type="number" max="5" name="answerFreeTime" min="1" required="required"></td>
+                </tr>
+                <tr>
+                    <!--權力-->
+                    <td><input type="number" name="sortPower" max="12" min="1" required="required"></td>
+                    <td>權力/控制別人; 影響、主控。</td>
+                    <td><input type="number" max="5" name="answerPower" min="1" required="required"></td>
+                </tr>
+                <tr>
+                    <!--聲望-->
+                    <td><input type="number" name="sortReputation" max="12" min="1" required="required"></td>
+                    <td>聲望/名聲、排行、受尊敬。</td>
+                    <td><input type="number" max="5" name="answerReputation" min="1" required="required"></td>
+                </tr>
+                <tr>
+                    <!--金錢-->
+                    <td><input type="number" name="sortMoney" max="12" min="1" required="required"></td>
+                    <td>金錢/個人所得的累積，五字登科的能力。</td>
+                    <td><input type="number" max="5" name="answerMoney" min="1" required="required"></td>
+                </tr>
+                <tr>
+                    <!--推動力-->
+                    <td><input type="number" name="sortExormisis" max="12" min="1" required="required"></td>
+                    <td>推動力/要想一直改進工作表現的感覺或需要。</td>
+                    <td><input type="number" max="5" name="answerExormisis" min="1" required="required"></td>
+                </tr>
+                <tr>
+                    <!--自尊-->
+                    <td><input type="number" name="sortSelfEsteem" max="12" min="1" required="required"></td>
+                    <td>自尊/你覺得自己有價值的一種感覺，自主性強。</td>
+                    <td><input type="number" max="5" name="answerSelfEsteem" min="1" required="required"></td>
+                </tr>
+                <tr>
+                    <!--家庭生活-->
+                    <td><input type="number" name="sortFamily" max="12" min="1" required="required"></td>
+                    <td>家庭生活/偏好家庭為中心的活動與興趣。</td>
+                    <td><input type="number" max="5" name="answerFamily" min="1" required="required"></td>
+                </tr>
+                <tr>
+                    <!--安全感-->
+                    <td><input type="number" name="sortSafety" max="12" min="1" required="required"></td>
+                    <td>安全感/關切工作的安全與穩定、安定。</td>
+                    <td><input type="number" max="5" name="answerSafety" min="1" required="required"></td>
+                </tr>
+                <tr>
+                    <!--個人成長-->
+                    <td><input type="number" name="sortGrowth" max="12" min="1" required="required"></td>
+                    <td>個人成長/能力及效率的發展，變成一個比較優秀的人。</td>
+                    <td><input type="number" max="5" name="answerGrowth" min="1" required="required"></td>
+                </tr>
+            </table>
+
+
+            <p><input type="submit" value="確認"></p>
+
+
+
+        </form>
+    </div>
+
+
+</body>
+<script>
+    function inputCheck() {
+        let inputArr = [
+        document.forms["Form"]["sortIndependence"].value,
+        document.forms["Form"]["sortIdentity"].value,
+        document.forms["Form"]["sortAchievement"].value,
+        document.forms["Form"]["sortFreeTime"].value,
+        document.forms["Form"]["sortPower"].value,
+        document.forms["Form"]["sortReputation"].value,
+        document.forms["Form"]["sortMoney"].value,
+        document.forms["Form"]["sortExormisis"].value,
+        document.forms["Form"]["sortSelfEsteem"].value,
+        document.forms["Form"]["sortFamily"].value,
+        document.forms["Form"]["sortSafety"].value,
+        document.forms["Form"]["sortGrowth"].value
+        ];
+        for(let i=0; i<inputArr.length; i++){
+            for(let j=0; j<inputArr.length; j++){
+                if(i!=j){
+                    if(inputArr[i] == "" || inputArr[j] == ""){
+                        alert("優先度請勿為空!!");
+                        return error;
+                    }
+
+                    if(inputArr[i] == inputArr[j]){
+                        alert("優先度請勿重複!!");
+                        return error;
+                    }
+                }
+            }
+        }
+    }
+
+
+
+</script>
+
+</html>
