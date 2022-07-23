@@ -108,6 +108,9 @@ const ResponseSchema = new Schema(
         },
         answerGrowth: {
             type: Number
+        },
+        randomid: {
+            type: Number
         }
     })
 
@@ -144,7 +147,7 @@ app.post('/login', (req, res) => {
     else {
         res.render('index');
     }
-    res.render('responses');
+    res.redirect('responses');
 });
 
 app.get('/loginPage', async function (req, res) {
@@ -180,19 +183,48 @@ app.post('/response', async function (req, res) {
         sortSafety: req.body.sortSafety,
         answerSafety: req.body.answerSafety,
         sortGrowth: req.body.sortGrowth,
-        answerGrowth: req.body.answerGrowth
+        answerGrowth: req.body.answerGrowth,
+        randomid: Date.now()
     })
     await newResponse.save();
-    res.render('index');
+    res.render('responseSent', {
+        user: req.body.user,
+        age: req.body.age,
+        career: req.body.career,
+        sortIndependence: req.body.sortIndependence,
+        answerIndependence: req.body.answerIndependence,
+        sortIdentity: req.body.sortIdentity,
+        answerIdentity: req.body.answerIdentity,
+        sortAchievement: req.body.sortAchievement,
+        answerAchievement: req.body.answerAchievement,
+        sortFreeTime: req.body.sortFreeTime,
+        answerFreeTime: req.body.answerFreeTime,
+        sortPower: req.body.sortPower,
+        answerPower: req.body.answerPower,
+        sortReputation: req.body.sortReputation,
+        answerReputation: req.body.answerReputation,
+        sortMoney: req.body.sortMoney,
+        answerMoney: req.body.answerMoney,
+        sortExormisis: req.body.sortExormisis,
+        answerExormisis: req.body.answerExormisis,
+        sortSelfEsteem: req.body.sortSelfEsteem,
+        answerSelfEsteem: req.body.answerSelfEsteem,
+        sortFamily: req.body.sortFamily,
+        answerFamily: req.body.answerFamily,
+        sortSafety: req.body.sortSafety,
+        answerSafety: req.body.answerSafety,
+        sortGrowth: req.body.sortGrowth,
+        answerGrowth: req.body.answerGrowth
+    });
 });
 
 
 
 
 
-app.get('/responses', (req, res) => {
+app.get('/responses', function (req, res) {
     if (req.cookies.token) {
-        jwt.verify(req.cookies.token, process.env.SECRET, function (err) {
+        jwt.verify(req.cookies.token, process.env.SECRET, async function (err) {
             if (err) {
                 console.log("token錯誤");
                 res.clearCookie('token');
@@ -200,7 +232,14 @@ app.get('/responses', (req, res) => {
                 //token過期判斷
             }
             else {
-                res.render('responses')
+                let datas = await ResponseData.find();
+                let dataLength = datas.length;
+                console.log(datas.length);
+                console.log(datas);
+                res.render('responses', {
+                    dlength: dataLength,
+                    data: datas
+                });
             }
         })
     }
@@ -208,6 +247,32 @@ app.get('/responses', (req, res) => {
         res.redirect('/');
     }
 });
+
+app.get('/data/:id',  (req, res) => {
+    let userid =  req.params.id;
+    console.log(userid);
+    if (req.cookies.token) {
+        jwt.verify(req.cookies.token, process.env.SECRET, async function (err) {
+            if (err) {
+                console.log("token錯誤");
+                res.clearCookie('token');
+                res.redirect('/');
+                //token過期判斷
+            }
+            else {
+                let userdata = await ResponseData.findOne({ randomid: userid });
+                console.log(userdata);
+                res.render('data', {
+                    userdata: userdata
+                });
+            }
+        })
+    }
+    else {
+        res.redirect('/');
+    }
+
+})
 
 const PORT = process.env.PORT || 8000;
 app.listen(PORT, () => console.log('Server up and running on ' + process.env.PORT + ' or 8000'));

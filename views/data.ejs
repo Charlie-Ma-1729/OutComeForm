@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>回覆:<%= userdata.user %>
+    </title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<style>
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    td,
+    th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+</style>
+
+<body onload="startup()">
+    <h4>姓名:<%= userdata.user %>;年齡:<%= userdata.age %>;職業:<%= userdata.career %>
+    </h4>
+    <table>
+        <tr>
+            <th>優先順序</th>
+            <th>項目</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td id="1st"></td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td id="2nd"></td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td id="3rd"></td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td id="4th"></td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td id="5th"></td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td id="6th"></td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td id="7th"></td>
+        </tr>
+        <tr>
+            <td>8</td>
+            <td id="8th"></td>
+        </tr>
+        <tr>
+            <td>9</td>
+            <td id="9th"></td>
+        </tr>
+        <tr>
+            <td>10</td>
+            <td id="10th"></td>
+        </tr>
+        <tr>
+            <td>11</td>
+            <td id="11th"></td>
+        </tr>
+        <tr>
+            <td>12</td>
+            <td id="12th"></td>
+        </tr>
+    </table>
+    <div style="width: 80%;margin:10%">
+        <canvas id="theChart"></canvas>
+    </div>
+
+</body>
+
+<script>
+    function startup() {
+        let sortArray;
+        sortArray = ['<%= userdata.sortIndependence %>', '<%= userdata.sortIdentity %>', '<%= userdata.sortAchievement %>', '<%= userdata.sortFreeTime %>', '<%= userdata.sortPower %>', '<%= userdata.sortReputation %>', '<%= userdata.sortMoney %>', '<%= userdata.sortExormisis %>', '<%= userdata.sortSelfEsteem %>', '<%= userdata.sortFamily %>', '<%= userdata.sortSafety %>', '<%= userdata.sortGrowth %>'];
+        let answerArray;
+        answerArray = ['<%= userdata.answerIndependence %>', '<%= userdata.answerIdentity %>', '<%= userdata.answerAchievement %>', '<%= userdata.answerFreeTime %>', '<%= userdata.answerPower %>', '<%= userdata.answerReputation %>', '<%= userdata.answerMoney %>', '<%= userdata.answerExormisis %>', '<%= userdata.answerSelfEsteem %>', '<%= userdata.answerFamily %>', '<%= userdata.answerSafety %>', '<%= userdata.answerGrowth %>'];
+        let titleArray;
+        titleArray = ['獨立性', '認同感', '成就感', '休閒時間', '權力', '聲望', '金錢', '推動力', '自尊', '家庭生活', '安全感', '個人成長'];
+        let subtitleArray;
+        subtitleArray = ['獨立性/自由做你自己想做的事; 能擺脫他人影響', '認同感/成就被肯定，表現有獎勵。', '成就感/成功完成工作，克服障礙，達成目標。', '休閒時間/從事工作以外你喜歡的休閒活動。', '權力/控制別人; 影響、主控。', '聲望/名聲、排行、受尊敬。', '金錢/個人所得的累積，五字登科的能力。', '推動力/要想一直改進工作表現的感覺或需要。', '自尊/你覺得自己有價值的一種感覺，自主性強。', '家庭生活/偏好家庭為中心的活動與興趣。', '安全感/關切工作的安全與穩定、安定。', '個人成長/能力及效率的發展，變成一個比較優秀的人。'];
+
+
+        for (let i = 0; i < sortArray.length; i++) {
+            switch (sortArray[i]) {
+                case '1':
+                    document.getElementById("1st").textContent = subtitleArray[i];
+                    break;
+                case '2':
+                    document.getElementById("2nd").textContent = subtitleArray[i];
+                    break;
+                case '3':
+                    document.getElementById("3rd").textContent = subtitleArray[i];
+                    break;
+                case '4':
+                    document.getElementById("4th").textContent = subtitleArray[i];
+                    break;
+                case '5':
+                    document.getElementById("5th").textContent = subtitleArray[i];
+                    break;
+                case '6':
+                    document.getElementById("6th").textContent = subtitleArray[i];
+                    break;
+                case '7':
+                    document.getElementById("7th").textContent = subtitleArray[i];
+                    break;
+                case '8':
+                    document.getElementById("8th").textContent = subtitleArray[i];
+                    break;
+                case '9':
+                    document.getElementById("9th").textContent = subtitleArray[i];
+                    break;
+                case '10':
+                    document.getElementById("10th").textContent = subtitleArray[i];
+                    break;
+
+                case '11':
+                    document.getElementById("11th").textContent = subtitleArray[i];
+                    break;
+                case '12':
+                    document.getElementById("12th").textContent = subtitleArray[i];
+                    break;
+            }
+        }
+        const labels = titleArray;
+
+        const data = {
+            labels: labels,
+            datasets: [{
+                label: '現況滿意度評分',
+                backgroundColor: 'rgb(255, 99, 132)',
+                borderColor: 'rgb(255, 99, 132)',
+                data: answerArray
+            }]
+        };
+
+        const config = {
+            type: 'line',
+            data: data,
+            options: {}
+        };
+
+        const myChart = new Chart(
+            document.getElementById('theChart'),
+            config
+        );
+    }
+</script>
+
+</html>
