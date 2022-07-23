@@ -4,9 +4,43 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>回覆</title>
+    <title>回覆列表</title>
 </head>
-<body>
+<style>
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
     
+    td, th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+    
+    tr:nth-child(even) {
+      background-color: #dddddd;
+    }
+</style>
+<body>
+    <h1>回覆列表</h1>
+    
+    <table>
+        <tr>
+            <th>姓名</th>
+            <th>年齡</th>
+            <th>職業</th>
+            <th>詳細資料</th>
+          </tr>
+          <% for(let i=0;i< dlength ;i++){%>
+            <tr>
+                <td><%= data[i]["user"] %></td>
+                <td><%= data[i]["age"] %></td>
+                <td><%= data[i]["career"] %></td>
+                <td><a href="/data/<%=data[i]["randomid"]%>">詳細資料</a></td>
+            </tr>
+        <%}%>
+    </table>
 </body>
 </html>
