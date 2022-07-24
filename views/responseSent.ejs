@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <title>回覆已送出</title>
 </head>
 
@@ -25,6 +26,13 @@
         <li id="third"></li>
         <p id="thirdcon"></p>
     </ol>
+    <div style="width: 80%;margin:10%">
+        <canvas id="theChart"></canvas>
+    </div>
+    <p>
+        <a href = "http://localhost:1800" target = "_blank">再次提交表單</a>
+    </p>
+
 </body>
 
 <script>
@@ -53,8 +61,29 @@
                 document.getElementById("thirdcon").textContent = conclusionArray[i];
             }
         }
-    }
+    
+        const labels = titleArray;
 
+        const data = {
+            labels: labels,
+            datasets: [{
+                label: '現況滿意度評分',
+                backgroundColor: 'rgb(255, 99, 132)',
+                borderColor: 'rgb(255, 99, 132)',
+                data: answerArray
+            }]
+        };
+        const config = {
+                type: 'line',
+                data: data,
+                options: {}
+        };
+
+        const myChart = new Chart(    
+            document.getElementById('theChart'),
+            config
+        );
+    }
 
 </script>
 
