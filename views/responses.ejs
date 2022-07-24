@@ -28,7 +28,7 @@
 
 <body>
   <h1>回覆列表</h1>
-  <form name="Form" method="post" action="/datepick">
+  <form name="Form" method="post" action="/datepick" style="display:inline;">
     <label for="date">篩選日期:</label>
     <select name="date" id="date" onchange='if(this.value != 0) { this.form.submit(); }'>
       <option value="0">請選擇日期</option>
@@ -37,9 +37,9 @@
           <%=dateArray[j]%>
         </option>
         <%}%>
-
     </select>
   </form>
+  <a href="/responses" style="text-decoration:none;"><button style="display:inline;" action="/responses">取消日期篩選</button></a>
   <table>
     <tr>
       <th>姓名</th>
@@ -59,8 +59,8 @@
         <td>
           <%= data[i]["career"] %>
         </td>
-        <td id="date<%=i%>"><%= data[i]["date"] %></td>
-        <td><a href="/data/<%=data[i][" randomid"]%>">詳細資料</a></td>
+        <td><%= data[i]["date"] %></td>
+        <td><a href="/data/<%=data[i]["randomid"]%>">詳細資料</a></td>
       </tr>
       <%}%>
   </table>
