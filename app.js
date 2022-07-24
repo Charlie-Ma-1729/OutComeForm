@@ -40,7 +40,7 @@ const ResponseSchema = new Schema(
         sortIndependence: {
             type: Number
         },
-        answerIndependences: {
+        answerIndependence: {
             type: Number
         },
         sortIdentity: {
@@ -111,6 +111,9 @@ const ResponseSchema = new Schema(
         },
         randomid: {
             type: Number
+        },
+        date: {
+            type:String
         }
     })
 
@@ -156,6 +159,12 @@ app.get('/loginPage', async function (req, res) {
 
 app.post('/response', async function (req, res) {
     console.log(JSON.stringify(req.body));
+    let today = new Date();
+    let dd = String(today.getDate()).padStart(2, '0');
+    let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    let yyyy = today.getFullYear();
+    let date = yyyy + "/" + mm + "/" + dd;
+    console.log(date);
     const newResponse = new ResponseData({
         user: req.body.user,
         age: req.body.age,
@@ -184,7 +193,9 @@ app.post('/response', async function (req, res) {
         answerSafety: req.body.answerSafety,
         sortGrowth: req.body.sortGrowth,
         answerGrowth: req.body.answerGrowth,
-        randomid: Date.now()
+        randomid: Date.now(),
+        date: date
+
     })
     await newResponse.save();
     res.render('responseSent', {
@@ -234,11 +245,20 @@ app.get('/responses', function (req, res) {
             else {
                 let datas = await ResponseData.find();
                 let dataLength = datas.length;
+                let dateArray = [];
+                for(let i=0; i<dataLength;i++){
+                    dateArray.push(datas[i]["date"]);
+                }
+                let filteredArray = dateArray.filter(function(item, pos){
+                    return dateArray.indexOf(item)== pos; 
+                  });
+                console.log(filteredArray);
                 console.log(datas.length);
                 console.log(datas);
                 res.render('responses', {
                     dlength: dataLength,
-                    data: datas
+                    data: datas,
+                    dateArray: filteredArray
                 });
             }
         })
@@ -247,6 +267,45 @@ app.get('/responses', function (req, res) {
         res.redirect('/');
     }
 });
+
+app.post('/datepick', function (req, res) {
+    let selectedate = req.body.date
+    if (req.cookies.token) {
+        jwt.verify(req.cookies.token, process.env.SECRET, async function (err) {
+            if (err) {
+                console.log("token錯誤");
+                res.clearCookie('token');
+                res.redirect('/');
+                //token過期判斷
+            }
+            else {
+                let dateta = await ResponseData.find({date: selectedate});
+                let datas = await ResponseData.find();
+                let datetaLength = dateta.length;
+                let dataLength = datas.length;
+                let dateArray = [];
+                for(let i=0; i<dataLength;i++){
+                    dateArray.push(datas[i]["date"]);
+                }
+                let filteredArray = dateArray.filter(function(item, pos){
+                    return dateArray.indexOf(item)== pos; 
+                  });
+                console.log(filteredArray);
+                console.log(datas.length);
+                console.log(datas);
+                res.render('responses', {
+                    dlength: datetaLength,
+                    data: dateta,
+                    dateArray: filteredArray
+                });
+            }
+        })
+    }
+    else {
+        res.redirect('/');
+    }
+});
+
 
 app.get('/data/:id',  (req, res) => {
     let userid =  req.params.id;

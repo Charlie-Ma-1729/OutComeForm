@@ -1,46 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>回覆列表</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>回覆列表</title>
 </head>
 <style>
-    table {
-      font-family: arial, sans-serif;
-      border-collapse: collapse;
-      width: 100%;
-    }
-    
-    td, th {
-      border: 1px solid #dddddd;
-      text-align: left;
-      padding: 8px;
-    }
-    
-    tr:nth-child(even) {
-      background-color: #dddddd;
-    }
+  table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  td,
+  th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
 </style>
+
 <body>
-    <h1>回覆列表</h1>
-    
-    <table>
-        <tr>
-            <th>姓名</th>
-            <th>年齡</th>
-            <th>職業</th>
-            <th>詳細資料</th>
-          </tr>
-          <% for(let i=0;i< dlength ;i++){%>
-            <tr>
-                <td><%= data[i]["user"] %></td>
-                <td><%= data[i]["age"] %></td>
-                <td><%= data[i]["career"] %></td>
-                <td><a href="/data/<%=data[i]["randomid"]%>">詳細資料</a></td>
-            </tr>
+  <h1>回覆列表</h1>
+  <form name="Form" method="post" action="/datepick">
+    <label for="date">篩選日期:</label>
+    <select name="date" id="date" onchange='if(this.value != 0) { this.form.submit(); }'>
+      <option value="0">請選擇日期</option>
+      <% for(let j=0;j< dateArray.length ;j++){%>
+        <option value="<%=dateArray[j]%>">
+          <%=dateArray[j]%>
+        </option>
         <%}%>
-    </table>
+
+    </select>
+  </form>
+  <table>
+    <tr>
+      <th>姓名</th>
+      <th>年齡</th>
+      <th>職業</th>
+      <th>回覆日期</th>
+      <th>詳細資料</th>
+    </tr>
+    <% for(let i=0;i< dlength ;i++){%>
+      <tr>
+        <td>
+          <%= data[i]["user"] %>
+        </td>
+        <td>
+          <%= data[i]["age"] %>
+        </td>
+        <td>
+          <%= data[i]["career"] %>
+        </td>
+        <td id="date<%=i%>"><%= data[i]["date"] %></td>
+        <td><a href="/data/<%=data[i][" randomid"]%>">詳細資料</a></td>
+      </tr>
+      <%}%>
+  </table>
 </body>
+
 </html>

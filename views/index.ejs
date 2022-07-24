@@ -8,7 +8,7 @@
 
 <body>
     <div align="center">
-        <form action="/response" method="post" name="Form" onsubmit="return inputCheck()">
+        <form action="/response" method="post" name="Form" id="Form" onsubmit="event.preventDefault();inputCheck()">
             <h1>Out Come表單</h1>
             <p>姓名:<input type="text" name="user" required="required"> 年齡:<input type="number" name="age" required="required"> 職業:<input type="text" name="career" required="required">
             </p>
@@ -121,18 +121,16 @@
         for(let i=0; i<inputArr.length; i++){
             for(let j=0; j<inputArr.length; j++){
                 if(i!=j){
-                    if(inputArr[i] == "" || inputArr[j] == ""){
-                        alert("優先度請勿為空!!");
-                        return error;
-                    }
-
                     if(inputArr[i] == inputArr[j]){
                         alert("優先度請勿重複!!");
-                        return error;
+                        returnToPreviousPage();
+                        return false;
                     }
                 }
             }
         }
+        Form.submit();
+        return true;
     }
 
 
