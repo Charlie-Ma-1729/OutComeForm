@@ -32,17 +32,41 @@
         <form action="/response" method="post" name="Form" id="Form" onsubmit="event.preventDefault();inputCheck()">
             <h1>Out Come表單</h1>
             
-            <table>
-            <p align="center">
-                姓名: <input type="text" style="width:80px;" name="user" required="required">
-                年齡: <input type="number" style="width:60px;" name="age" required="required" ><br>
-                工作內容（如：學生、保險業務員⋯⋯）: <input type="text" style="width:80px;" name="career" required="required"> <br>
-                Email: <input type="text" style="width:328px;" name="email" required="required">
-                <br>
-                <br>
-            </p>
+            <br>
+            <table border="1">
+                <tr>
+                    <th>姓名</th>
+                    <th><input type="text" style="width:400px;" name="user" required="required"></th>
+                </tr>
+                <tr>
+                    <th>年齡</th>
+                    <th><input type="number" style="width:400px;" name="age" required="required"></th>
+                </tr>
+                <tr>
+                    <th>工作內容(如：學生、保險業務員)</th>
+                    <th><input type="text" style="width:400px;" name="career" required="required"></th>
+                </tr>
+                <tr>
+                    <th>Email</th>
+                    <th><input type="text" style="width:400px;" name="email" required="required"></th>           
+                </tr>
+            
             </table>
             
+            <h2>說明</h2>
+            <table border="1">
+                <tr>
+                    <th>左側欄說明(填入順序1~12)</th>
+                    <th> </th>
+                    <th>右側欄說明(1~5分)</th>
+                </tr>
+                <td>此表單之左側欄請填入1~12，1代表最急迫想要擁有，12代表最不急迫想要擁有</td>
+                <td> </td>
+                <td>
+                    右側欄代表各項所得的分數，1代表評分最低最不滿意的現況，5代表非常滿意的現況，排序的左側欄若排序為1~6，現況評分僅能填入1~3，排序的左側欄若排序為7~12，現況評分僅能填入3~5。
+                </td>
+            </table>
+            <br>
             
             <h2>範例</h2>
             <table border="1">
@@ -70,7 +94,7 @@
                             <option value="12">12</option>
                         </select>
                     </td>
-                    <td>敘述</td>
+                    <td>Outcome成果評量分析(各項內容說明敘述)</td>
                     <td>
                         <select name="answerExample" required="required" type="number">
                             <option>請填入1~5分</option>
@@ -83,19 +107,9 @@
                     </td>
                 </tr>
             </table>
-            <br>
-            
-            <h2>說明</h2>
-            <table border="1">
-                <td>此表單之左側欄請填入1~12，1代表最急迫想要擁有，12代表最不急迫想要擁有</td>
-                <td>
-                    右側欄代表各項所得的分數，1代表評分最低最不滿意的現況，5代表非常滿意的現況，排序的左側欄若排序為1~6，現況評分僅能填入1~3，排序的左側欄若排序為7~12，現況評分僅能填入3~5。
-                </td>
-            </table>
-            
-            
             
             <br>
+            <h2>測驗開始</h2>
             <table border="1">
                 <tr>
                     <th>優先排序(1~12)</th>
