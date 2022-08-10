@@ -589,26 +589,42 @@
     <p>
         <a href = "/loginpageOwner" target = "_blank">擁有者登入</a>
         
-        <a href = "/loginpageMember" target = "_blank">會員登入</a>
+        <!--- <a href = "/loginpageMember" target = "_blank">會員登入</a> --->
     </p>
 
 </body>
 <script>
     function inputCheck() {
-        let inputArr = [
-        document.forms["Form"]["sortIndependence"].value,
-        document.forms["Form"]["sortIdentity"].value,
-        document.forms["Form"]["sortAchievement"].value,
-        document.forms["Form"]["sortFreeTime"].value,
-        document.forms["Form"]["sortPower"].value,
-        document.forms["Form"]["sortReputation"].value,
-        document.forms["Form"]["sortMoney"].value,
-        document.forms["Form"]["sortExormisis"].value,
-        document.forms["Form"]["sortSelfEsteem"].value,
-        document.forms["Form"]["sortFamily"].value,
-        document.forms["Form"]["sortSafety"].value,
-        document.forms["Form"]["sortGrowth"].value
+        let inputArr =[
+            document.form.sortIndependence.value,
+            document.form.sortIdentity.value,
+            document.form.sortAchievement.value,
+            document.form.sortFreeTime.value,
+            document.form.sortPower.value,
+            document.form.sortReputation.value,
+            document.form.sortMoney.value,
+            document.form.sortExormisis.value,
+            document.form.sortSelfEsteem.value,
+            document.form.sortFamily.value,
+            document.form.sortSafety.value,
+            document.form.sortGrowth.value
         ];
+
+
+        //let inputArr = [
+        //document.forms["Form"]["sortIndependence"].option.value,
+        //document.forms["Form"]["sortIdentity"].value,
+        //document.forms["Form"]["sortAchievement"].value,
+        //document.forms["Form"]["sortFreeTime"].value,
+        //document.forms["Form"]["sortPower"].value,
+        //document.forms["Form"]["sortReputation"].value,
+        //document.forms["Form"]["sortMoney"].value,
+        //document.forms["Form"]["sortExormisis"].value,
+        //document.forms["Form"]["sortSelfEsteem"].value,
+        //document.forms["Form"]["sortFamily"].value,
+        //document.forms["Form"]["sortSafety"].value,
+        //document.forms["Form"]["sortGrowth"].value
+        //];
         for(let i=0; i<inputArr.length; i++){
             for(let j=0; j<inputArr.length; j++){
                 if(i!=j){
