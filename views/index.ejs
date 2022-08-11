@@ -599,7 +599,6 @@
             document.getElementById('sortIndependence'),
             document.getElementById('sortIdentity'),
             document.getElementById('sortAchievement'),
-            document.getElementById('sortIndependence'),
             document.getElementById('sortFreeTime'),
             document.getElementById('sortPower'),
             document.getElementById('sortReputation'),
@@ -630,7 +629,7 @@
             for(let j=0; j<inputArr.length; j++){
                 if(i!=j){
                     if(inputArr[i] == inputArr[j]){
-                        alert("優先度請勿重複!!");
+                        alert("優先順序請勿重複!!");
                         returnToPreviousPage();
                         return false;
                     }
