@@ -37,6 +37,103 @@ const ResponseSchema = new Schema(
         career: {
             type: String
         },
+        email: {
+            type: String
+        },
+        sortIndependence: {
+            type: String
+        },
+        answerIndependence: {
+            type: String
+        },
+        sortIdentity: {
+            type: String
+        },
+        answerIdentity: {
+            type: String
+        },
+        sortAchievement: {
+            type: String
+        },
+        answerAchievement: {
+            type: String
+        },
+        sortFreeTime: {
+            type: String
+        },
+        answerFreeTime: {
+            type: String
+        },
+        sortPower: {
+            type: String
+        },
+        answerPower: {
+            type: String
+        },
+        sortReputation: {
+            type: String
+        },
+        answerReputation: {
+            type: String
+        },
+        sortMoney: {
+            type: String
+        },
+        answerMoney: {
+            type: String
+        },
+        sortExormisis: {
+            type: String
+        },
+        answerExormisis: {
+            type: String
+        },
+        sortSelfEsteem: {
+            type: String
+        },
+        answerSelfEsteem: {
+            type: String
+        },
+        sortFamily: {
+            type: String
+        },
+        answerFamily: {
+            type: String
+        },
+        sortSafety: {
+            type: String
+        },
+        answerSafety: {
+            type: String
+        },
+        sortGrowth: {
+            type: String
+        },
+        answerGrowth: {
+            type: String
+        },
+        randomid: {
+            type: Number
+        },
+        date: {
+            type:String
+        }
+    })
+/*
+const ResponseSchema = new Schema(
+    {
+        user: {
+            type: String
+        },
+        age: {
+            type: Number
+        },
+        career: {
+            type: String
+        },
+        email: {
+            type: String
+        },
         sortIndependence: {
             type: Number
         },
@@ -116,7 +213,7 @@ const ResponseSchema = new Schema(
             type:String
         }
     })
-
+*/
 const ResponseData = mongoose.model('responses', ResponseSchema)
 
 
@@ -153,6 +250,8 @@ app.post('/login', (req, res) => {
     res.redirect('responses');
 });
 
+
+
 app.get('/loginPage', async function (req, res) {
     res.render('loginPage');
 });
@@ -169,6 +268,7 @@ app.post('/response', async function (req, res) {
         user: req.body.user,
         age: req.body.age,
         career: req.body.career,
+        email: req.body.email,
         sortIndependence: req.body.sortIndependence,
         answerIndependence: req.body.answerIndependence,
         sortIdentity: req.body.sortIdentity,
@@ -202,6 +302,7 @@ app.post('/response', async function (req, res) {
         user: req.body.user,
         age: req.body.age,
         career: req.body.career,
+        email: req.body.email,
         sortIndependence: req.body.sortIndependence,
         answerIndependence: req.body.answerIndependence,
         sortIdentity: req.body.sortIdentity,
