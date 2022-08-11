@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://www.chartjs.org/docs/latest/charts/bar.html"></script>
     <title>回覆已送出</title>
 </head>
 
@@ -57,41 +58,117 @@
         let conclusionArray;
         conclusionArray = ['按照自己的想法進行自己的展業工作，獨立的管理......成為自己的老闆。','因表現優良得到實質獎勵，例如在公開場合或演講會中予以表揚。','成功的完成工作後所獲致的感覺。......克服障礙以及成就目標。','可以依自己的意願安排非業務時間，以及從那些非業務時間安排所達到的愉悅程度。','一種能控制及掌握自己以及他人命運的感覺......能夠影響以及指導他人行為的感覺。','獲得同事，公司或社團組織的尊敬......別人對你在同事中“表現出眾”的感覺程度。','工作所能帶給個人的財務收入之多寡。','不斷提昇工作績效表現的需要或感覺。','對自我價值看法......在自己心目中，與群體相較自認為出眾的程度。','與家人相處生活的時間與品質。','維持現有工作的穩定性......明天會更好的感受程度。','個人能成長的空間，能夠變得更有能力，更有效率更優秀的感覺。'];
 
+        let firstAnswer = 0;
+        let secondAnswer = 0;
+        let thirdAnswer = 0;
 
         for (let i = 0; i < sortArray.length; i++) {
             if (sortArray[i] == 1) {
                 document.getElementById("first").textContent = titleArray[i] + "，滿意度為" + answerArray[i];
+                firstAnswer = answerArray[i];
                 document.getElementById("firstcon").textContent = conclusionArray[i];
             }
             if (sortArray[i] == 2) {
                 document.getElementById("second").textContent = titleArray[i] + "，滿意度為" + answerArray[i];
+                secondAnswer = answerArray[i];
                 document.getElementById("secondcon").textContent = conclusionArray[i];
             }
             if (sortArray[i] == 3) {
                 document.getElementById("third").textContent = titleArray[i] + "，滿意度為" + answerArray[i];
+                thirdAnswer = answerArray[i];
                 document.getElementById("thirdcon").textContent = conclusionArray[i];
             }
         }
 
+        let twelfthAnswer = 0;
+        let eleventhAnswer = 0;
+        let tenthAnswer = 0;
+
         for (let i = 0; i < sortArray.length; i++) {
             if (sortArray[i] == 12) {
                 document.getElementById("twelfth").textContent = titleArray[i] + "，滿意度為" + answerArray[i];
+                twelfthAnswer = answerArray[i];
                 document.getElementById("twelfthcon").textContent = conclusionArray[i];
             }
             if (sortArray[i] == 11) {
                 document.getElementById("eleventh").textContent = titleArray[i] + "，滿意度為" + answerArray[i];
+                eleventhAnswer = answerArray[i];
                 document.getElementById("eleventhcon").textContent = conclusionArray[i];
             }
             if (sortArray[i] == 10) {
                 document.getElementById("tenth").textContent = titleArray[i] + "，滿意度為" + answerArray[i];
+                tenthAnswer = answerArray[i];
                 document.getElementById("tenthcon").textContent = conclusionArray[i];
             }
         }
     
-        const labels = titleArray;
+        const labelsFirst = "first" + "second" + "third";
+        const dataFirst = {
+            labels: labelsFirst,
+            datasets: [{
+            label: '最急迫想要擁有的現況滿意評分',
+            data: [firstAnswer, secondAnswer, thirdAnswer],
+            backgroundColor: [
+            'rgba(255, 99, 132, 0.2)',
+            'rgba(255, 159, 64, 0.2)',
+            'rgba(255, 205, 86, 0.2)'
+            ],
+            borderColor: [
+            'rgb(255, 99, 132)',
+            'rgb(255, 159, 64)',
+            'rgb(255, 205, 86)'
+            ],
+            borderWidth: 1
+            }]
+        };
 
+        const configFirst = {
+            type: 'bar',
+            data: data,
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            },
+        };
+
+        const labelsLast = "twelfth" + "eleventh" + "tenth";
+        const dataLast = {
+            labels: labelsLast,
+            datasets: [{
+            label: '最不急迫想要擁有的現況滿意評分',
+            data: [twelfthAnswer, eleventhAnswer, tenthAnswer],
+            backgroundColor: [
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(153, 102, 255, 0.2)',
+            'rgba(201, 203, 207, 0.2)'
+            ],
+            borderColor: [
+            'rgb(54, 162, 235)',
+            'rgb(153, 102, 255)',
+            'rgb(201, 203, 207)'
+            ],
+            borderWidth: 1
+            }]
+        };
+
+        const configLast = {
+            type: 'bar',
+            data: data,
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            },
+        };
+
+        const labelsTitle = titleArray; 
         const data = {
-            labels: labels,
+            labels: labelsTitle,
             datasets: [{
                 label: '現況滿意度評分',
                 backgroundColor: 'rgb(255, 99, 132)',
