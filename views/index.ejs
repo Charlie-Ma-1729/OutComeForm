@@ -210,7 +210,7 @@
                 <tr>
                     <!--獨立性-->
                     <td>
-                        <select name="SortIndependence" required="required">
+                        <select name="SortIndependence" id="SortIndependence" required="required">
                             <option>填入1~12</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -241,7 +241,7 @@
                 <tr>
                     <!--認同感-->
                     <td>
-                        <select name="sortIdentity" required="required">
+                        <select name="sortIdentity" id="sortIdentity" required="required">
                             <option>填入1~12</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -272,7 +272,7 @@
                 <tr>
                     <!--成就感-->
                     <td>
-                        <select name="sortAchievement" required="required">
+                        <select name="sortAchievement" id="sortAchievement" required="required">
                             <option>填入1~12</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -303,7 +303,7 @@
                 <tr>
                     <!--休閒時間-->
                     <td>
-                        <select name="sortFreeTime" required="required">
+                        <select name="sortFreeTime" id="sortFreeTime" required="required">
                             <option>填入1~12</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -334,7 +334,7 @@
                 <tr>
                     <!--權力-->
                     <td>
-                        <select name="sortPower" required="required">
+                        <select name="sortPower" id="sortPower" required="required">
                             <option>填入1~12</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -365,7 +365,7 @@
                 <tr>
                     <!--聲望-->
                     <td>
-                        <select name="sortReputation" required="required">
+                        <select name="sortReputation" id="sortReputation" required="required">
                             <option>填入1~12</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -396,7 +396,7 @@
                 <tr>
                     <!--金錢-->
                     <td>
-                        <select name="sortMoney" required="required">
+                        <select name="sortMoney" id="sortMoney" required="required">
                             <option>填入1~12</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -427,7 +427,7 @@
                 <tr>
                     <!--推動力-->
                     <td>
-                        <select name="sortExormisis" required="required">
+                        <select name="sortExormisis" id="sortExormisis" required="required">
                             <option>填入1~12</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -458,7 +458,7 @@
                 <tr>
                     <!--自尊-->
                     <td>
-                        <select name="sortSelfEsteem" required="required">
+                        <select name="sortSelfEsteem" id="sortSelfEsteem" required="required">
                             <option>填入1~12</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -489,7 +489,7 @@
                 <tr>
                     <!--家庭生活-->
                     <td>
-                        <select name="sortFamily" required="required">
+                        <select name="sortFamily" id="sortFamily" required="required">
                             <option>填入1~12</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -520,7 +520,7 @@
                 <tr>
                     <!--安全感-->
                     <td>
-                        <select name="sortSafety" required="required">
+                        <select name="sortSafety" id="sortSafety" required="required">
                             <option>填入1~12</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -551,7 +551,7 @@
                 <tr>
                     <!--個人成長-->
                     <td>
-                        <select name="sortGrowth" required="required">
+                        <select name="sortGrowth" id="sortGrowth" required="required">
                             <option>填入1~12</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -595,20 +595,37 @@
 </body>
 <script>
     function inputCheck() {
-        let inputArr = [
-        document.forms["Form"]["sortIndependence"].value,
-        document.forms["Form"]["sortIdentity"].value,
-        document.forms["Form"]["sortAchievement"].value,
-        document.forms["Form"]["sortFreeTime"].value,
-        document.forms["Form"]["sortPower"].value,
-        document.forms["Form"]["sortReputation"].value,
-        document.forms["Form"]["sortMoney"].value,
-        document.forms["Form"]["sortExormisis"].value,
-        document.forms["Form"]["sortSelfEsteem"].value,
-        document.forms["Form"]["sortFamily"].value,
-        document.forms["Form"]["sortSafety"].value,
-        document.forms["Form"]["sortGrowth"].value
-        ];
+        let inputArr=[
+            document.getElementById('sortIndependence'),
+            document.getElementById('sortIdentity'),
+            document.getElementById('sortAchievement'),
+            document.getElementById('sortIndependence'),
+            document.getElementById('sortFreeTime'),
+            document.getElementById('sortPower'),
+            document.getElementById('sortReputation'),
+            document.getElementById('sortMoney'),
+            document.getElementById('sortExormisis'),
+            document.getElementById('sortSelfEsteem'),
+            document.getElementById('sortFamily'),
+            document.getElementById('sortSafety'),
+            document.getElementById('sortGrowth')
+        ]
+
+        //let inputArr = [
+        //document.forms["Form"]["sortIndependence"].value,
+        //document.forms["Form"]["sortIdentity"].value,
+        //document.forms["Form"]["sortAchievement"].value,
+        //document.forms["Form"]["sortFreeTime"].value,
+        //document.forms["Form"]["sortPower"].value,
+        //document.forms["Form"]["sortReputation"].value,
+        //document.forms["Form"]["sortMoney"].value,
+        //document.forms["Form"]["sortExormisis"].value,
+        //document.forms["Form"]["sortSelfEsteem"].value,
+        //document.forms["Form"]["sortFamily"].value,
+        //document.forms["Form"]["sortSafety"].value,
+        //document.forms["Form"]["sortGrowth"].value
+        //];
+
         for(let i=0; i<inputArr.length; i++){
             for(let j=0; j<inputArr.length; j++){
                 if(i!=j){
