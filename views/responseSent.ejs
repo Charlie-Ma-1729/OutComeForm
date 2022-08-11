@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://www.chartjs.org/docs/latest/charts/bar.html"></script>
+    <!--<script src="https://www.chartjs.org/docs/latest/charts/bar.html"></script>-->
     <title>回覆已送出</title>
 </head>
 
@@ -39,6 +39,12 @@
         <li id="tenth"></li>
         <p id="tenthcon"></p>
     </ol>
+    <div style="width: 80%;margin:10% 10% 5% 10% ">
+        <canvas id="theChartFirst"></canvas>
+    </div>
+    <div style="width: 80%;margin:10% 10% 5% 10% ">
+        <canvas id="theChartLast"></canvas>
+    </div>
     <div style="width: 80%;margin:10% 10% 5% 10% ">
         <canvas id="theChart"></canvas>
     </div>
@@ -134,6 +140,11 @@
             },
         };
 
+        const myChartFirst = new Chart(    
+            document.getElementById('theChartFirst'),
+            config
+        );
+
         const labelsLast = "twelfth" + "eleventh" + "tenth";
         const dataLast = {
             labels: labelsLast,
@@ -165,6 +176,11 @@
                 }
             },
         };
+
+        const myChartLast = new Chart(    
+            document.getElementById('theChartLast'),
+            config
+        );
 
         const labelsTitle = titleArray; 
         const data = {
