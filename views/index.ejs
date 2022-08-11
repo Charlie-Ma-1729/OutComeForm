@@ -229,7 +229,7 @@
                     <td>獨立性/自由做你自己想做的事; 能擺脫他人影響</td>
                     <td>
                         <select name="answerIndependence" required="required">
-                            <option>填入1~5分</option>
+                            <option value="-1">填入1~5分</option>
                             <option value="1">★</option>
                             <option value="2">★★</option>
                             <option value="3">★★★</option>
@@ -260,7 +260,7 @@
                     <td>認同感/成就被肯定，表現有獎勵。</td>
                     <td>
                         <select name="answerIdentity" required="required">
-                            <option>填入1~5分</option>
+                            <option value="-1">填入1~5分</option>
                             <option value="1">★</option>
                             <option value="2">★★</option>
                             <option value="3">★★★</option>
@@ -291,7 +291,7 @@
                     <td> 成就感/成功完成工作，克服障礙，達成目標。</td>
                     <td>
                         <select name="answerAchievement" required="required">
-                            <option>填入1~5分</option>
+                            <option value="-1">填入1~5分</option>
                             <option value="1">★</option>
                             <option value="2">★★</option>
                             <option value="3">★★★</option>
@@ -322,7 +322,7 @@
                     <td>休閒時間/從事工作以外你喜歡的休閒活動。</td>
                     <td>
                         <select name="answerFreeTime" required="required">
-                            <option>填入1~5分</option>
+                            <option value="-1">填入1~5分</option>
                             <option value="1">★</option>
                             <option value="2">★★</option>
                             <option value="3">★★★</option>
@@ -353,7 +353,7 @@
                     <td> 權力/控制別人; 影響、主控。</td>
                     <td>
                         <select name="answerPower" required="required">
-                            <option>填入1~5分</option>
+                            <option value="-1">填入1~5分</option>
                             <option value="1">★</option>
                             <option value="2">★★</option>
                             <option value="3">★★★</option>
@@ -384,7 +384,7 @@
                     <td> 聲望/名聲、排行、受尊敬。</td>
                     <td>
                         <select name="answerReputation" required="required">
-                            <option>填入1~5分</option>
+                            <option value="-1">填入1~5分</option>
                             <option value="1">★</option>
                             <option value="2">★★</option>
                             <option value="3">★★★</option>
@@ -415,7 +415,7 @@
                     <td> 金錢/個人所得的累積，五字登科的能力。</td>
                     <td>
                         <select name="answerMoney" required="required">
-                            <option>填入1~5分</option>
+                            <option value="-1">填入1~5分</option>
                             <option value="1">★</option>
                             <option value="2">★★</option>
                             <option value="3">★★★</option>
@@ -446,7 +446,7 @@
                     <td> 推動力/要想一直改進工作表現的感覺或需要。</td>
                     <td>
                         <select name="answerExormisis" required="required">
-                            <option>填入1~5分</option>
+                            <option value="-1">填入1~5分</option>
                             <option value="1">★</option>
                             <option value="2">★★</option>
                             <option value="3">★★★</option>
@@ -477,7 +477,7 @@
                     <td> 自尊/你覺得自己有價值的一種感覺，自主性強。</td>
                     <td>
                         <select name="answerSelfEsteem" required="required">
-                            <option>填入1~5分</option>
+                            <option value="-1">填入1~5分</option>
                             <option value="1">★</option>
                             <option value="2">★★</option>
                             <option value="3">★★★</option>
@@ -508,7 +508,7 @@
                     <td> 家庭生活/偏好家庭為中心的活動與興趣。</td>
                     <td>
                         <select name="answerFamily" required="required">
-                            <option>填入1~5分</option>
+                            <option value="-1">填入1~5分</option>
                             <option value="1">★</option>
                             <option value="2">★★</option>
                             <option value="3">★★★</option>
@@ -539,7 +539,7 @@
                     <td> 安全感/關切工作的安全與穩定、安定。</td>
                     <td>
                         <select name="answerSafety" required="required">
-                            <option>填入1~5分</option>
+                            <option value="-1">填入1~5分</option>
                             <option value="1">★</option>
                             <option value="2">★★</option>
                             <option value="3">★★★</option>
@@ -570,7 +570,7 @@
                     <td> 個人成長/能力及效率的發展，變成一個比較優秀的人。</td>
                     <td>
                         <select name="answerGrowth" required="required">
-                            <option>填入1~5分</option>
+                            <option value="-1">填入1~5分</option>
                             <option value="1">★</option>
                             <option value="2">★★</option>
                             <option value="3">★★★</option>
@@ -643,12 +643,12 @@
 
         for(let i=0; i<inputArr.length; i++){
             for(let j=0; j<answerInputArr.length; j++){
-                if(inputArr[i]<7&&inputArr[j]>3){
+                if(inputArr[i]<7&&answerInputArr[j]>3){
                     alert("若排序在1~6之間，各項評分請填入1~3顆★");
                     returnToPreviousPage();
                     return false;
                 }
-                else(inputArr[i]>6&&inputArr[j]<3){
+                else(inputArr[i]>6&&answerInputArr[j]<3){
                     alert("若排序在7~12之間，各項評分請填入3~5顆★");
                     returnToPreviousPage();
                     return false;
