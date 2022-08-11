@@ -27,101 +27,6 @@ mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true })
 
 const Schema = mongoose.Schema;
 
-const ResponseSchema = new Schema(
-    {
-        user: {
-            type: String
-        },
-        age: {
-            type: Number
-        },
-        career: {
-            type: String
-        },
-        email: {
-            type: String
-        },
-        sortIndependence: {
-            type: String
-        },
-        answerIndependence: {
-            type: String
-        },
-        sortIdentity: {
-            type: String
-        },
-        answerIdentity: {
-            type: String
-        },
-        sortAchievement: {
-            type: String
-        },
-        answerAchievement: {
-            type: String
-        },
-        sortFreeTime: {
-            type: String
-        },
-        answerFreeTime: {
-            type: String
-        },
-        sortPower: {
-            type: String
-        },
-        answerPower: {
-            type: String
-        },
-        sortReputation: {
-            type: String
-        },
-        answerReputation: {
-            type: String
-        },
-        sortMoney: {
-            type: String
-        },
-        answerMoney: {
-            type: String
-        },
-        sortExormisis: {
-            type: String
-        },
-        answerExormisis: {
-            type: String
-        },
-        sortSelfEsteem: {
-            type: String
-        },
-        answerSelfEsteem: {
-            type: String
-        },
-        sortFamily: {
-            type: String
-        },
-        answerFamily: {
-            type: String
-        },
-        sortSafety: {
-            type: String
-        },
-        answerSafety: {
-            type: String
-        },
-        sortGrowth: {
-            type: String
-        },
-        answerGrowth: {
-            type: String
-        },
-        randomid: {
-            type: Number
-        },
-        date: {
-            type:String
-        }
-    })
-
-
 /*
 const ResponseSchema = new Schema(
     {
@@ -138,6 +43,102 @@ const ResponseSchema = new Schema(
             type: String
         },
         sortIndependence: {
+            type: String
+        },
+        answerIndependence: {
+            type: String
+        },
+        sortIdentity: {
+            type: String
+        },
+        answerIdentity: {
+            type: String
+        },
+        sortAchievement: {
+            type: String
+        },
+        answerAchievement: {
+            type: String
+        },
+        sortFreeTime: {
+            type: String
+        },
+        answerFreeTime: {
+            type: String
+        },
+        sortPower: {
+            type: String
+        },
+        answerPower: {
+            type: String
+        },
+        sortReputation: {
+            type: String
+        },
+        answerReputation: {
+            type: String
+        },
+        sortMoney: {
+            type: String
+        },
+        answerMoney: {
+            type: String
+        },
+        sortExormisis: {
+            type: String
+        },
+        answerExormisis: {
+            type: String
+        },
+        sortSelfEsteem: {
+            type: String
+        },
+        answerSelfEsteem: {
+            type: String
+        },
+        sortFamily: {
+            type: String
+        },
+        answerFamily: {
+            type: String
+        },
+        sortSafety: {
+            type: String
+        },
+        answerSafety: {
+            type: String
+        },
+        sortGrowth: {
+            type: String
+        },
+        answerGrowth: {
+            type: String
+        },
+        randomid: {
+            type: Number
+        },
+        date: {
+            type:String
+        }
+    })
+*/
+
+
+const ResponseSchema = new Schema(
+    {
+        user: {
+            type: String
+        },
+        age: {
+            type: Number
+        },
+        career: {
+            type: String
+        },
+        email: {
+            type: String
+        },
+        sortIndependence: {
             type: Number
         },
         answerIndependence: {
@@ -216,7 +217,7 @@ const ResponseSchema = new Schema(
             type:String
         }
     })
-*/
+
 const ResponseData = mongoose.model('responses', ResponseSchema)
 
 
