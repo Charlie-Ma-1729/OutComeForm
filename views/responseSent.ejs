@@ -108,7 +108,7 @@
             }
         }
     
-        const labelsFirst = "first" + "second" + "third";
+        let labelsFirst = "first" + "second" + "third";
         const dataFirst = {
             labels: labelsFirst,
             datasets: [{
@@ -145,7 +145,7 @@
             config
         );
 
-        const labelsLast = "twelfth" + "eleventh" + "tenth";
+        let labelsLast = "twelfth" + "eleventh" + "tenth";
         const dataLast = {
             labels: labelsLast,
             datasets: [{
@@ -182,9 +182,9 @@
             config
         );
 
-        const labelsTitle = titleArray; 
+        const labels = titleArray; 
         const data = {
-            labels: labelsTitle,
+            labels: labels,
             datasets: [{
                 label: '現況滿意度評分',
                 backgroundColor: 'rgb(255, 99, 132)',
