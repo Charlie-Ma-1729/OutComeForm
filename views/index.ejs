@@ -648,11 +648,12 @@
                     returnToPreviousPage();
                     return false;
                 }
-                else(inputArr[i]>6&&answerInputArr[j]<3){
+                else if(inputArr[i]>6&&answerInputArr[j]<3){
                     alert("若排序在7~12之間，各項評分請填入3~5顆★");
                     returnToPreviousPage();
                     return false;
                 }
+                else{}
             }
         }
 
