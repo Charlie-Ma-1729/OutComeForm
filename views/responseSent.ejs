@@ -108,7 +108,7 @@
             }
         }
     
-        let labelsFirst = "first" + "second" + "third";
+        let labelsFirst = document.getElementById("first") + document.getElementById("second") + document.getElementById("third");
         const dataFirst = {
             labels: labelsFirst,
             datasets: [{
@@ -145,7 +145,7 @@
             config
         );
 
-        let labelsLast = "twelfth" + "eleventh" + "tenth";
+        let labelsLast = document.getElementById("twelfth") + document.getElementById("eleventh") + document.getElementById("tenth");
         const dataLast = {
             labels: labelsLast,
             datasets: [{
