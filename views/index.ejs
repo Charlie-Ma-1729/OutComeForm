@@ -608,7 +608,7 @@
             document.getElementById('sortFamily').value,
             document.getElementById('sortSafety').value,
             document.getElementById('sortGrowth').value
-        ]
+        ];
 
         let answerInputArr=[
             document.getElementById('answerIndependence').value,
@@ -623,8 +623,9 @@
             document.getElementById('answerFamily').value,
             document.getElementById('answerSafety').value,
             document.getElementById('answerGrowth').value
-        ]
+        ];
 
+        //優先順序沒有選
         for(let i=0; i<inputArr.length; i++){
             if(inputArr[i]==-1){
                 alert("優先順序請勿空白!!");
@@ -633,14 +634,16 @@
             }
         }
 
+        //評分沒有選
         for(let i=0; i<answerInputArr.length; i++){
             if(answerInputArr[i]==-1){
-                alert("滿意評分請勿空白!!");
+                alert("現況評分請勿空白!!");
                 returnToPreviousPage();
                 return false;
             }
         }
 
+        //順序在1~6，分數只能是1~3分；順序在7~12，分數只能是3~5分
         for(let i=0; i<inputArr.length; i++){
             for(let j=0; j<answerInputArr.length; j++){
                 if(inputArr[i]<7&&answerInputArr[j]>3){
