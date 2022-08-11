@@ -39,11 +39,13 @@
         <li id="tenth"></li>
         <p id="tenthcon"></p>
     </ol>
+    <!--
     <div style="width: 80%;margin:10% 10% 5% 10% ">
         <canvas id="theChartFirst"></canvas>
     </div>
     <div style="width: 80%;margin:10% 10% 5% 10% ">
         <canvas id="theChartLast"></canvas>
+    -->
     </div>
     <div style="width: 80%;margin:10% 10% 5% 10% ">
         <canvas id="theChart"></canvas>
@@ -109,6 +111,7 @@
         }
     
         const labelsFirstArray = [document.getElementById("first"), document.getElementById("second"), document.getElementById("third")];
+        /*
         const dataFirst = {
             labels: labelsFirstArray,
             datasets: [{
@@ -144,9 +147,10 @@
             document.getElementById('theChartFirst'),
             config
         );
-
+        */
 
         const labelsLastArray = [document.getElementById("twelfth"), document.getElementById("eleventh"), document.getElementById("tenth")];
+        /*
         const dataLast = {
             labels: labelsLastArray,
             datasets: [{
@@ -182,8 +186,11 @@
             document.getElementById('theChartLast'),
             config
         );
+        */
 
+        
         const labels = titleArray; 
+        /*
         const data = {
             labels: labels,
             datasets: [{
@@ -203,6 +210,44 @@
             document.getElementById('theChart'),
             config
         );
+        */
+
+        const data = {
+            labels: labelsFirstArray,
+            datasets: [{
+            label: '最急迫想要擁有的現況滿意評分',
+            data: [firstAnswer, secondAnswer, thirdAnswer],
+            backgroundColor: [
+            'rgba(255, 99, 132, 0.2)',
+            'rgba(255, 159, 64, 0.2)',
+            'rgba(255, 205, 86, 0.2)'
+            ],
+            borderColor: [
+            'rgb(255, 99, 132)',
+            'rgb(255, 159, 64)',
+            'rgb(255, 205, 86)'
+            ],
+            borderWidth: 1
+            }]
+        }
+
+        const config = {
+            type: 'bar',
+            data: data,
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            },
+        };
+
+        const myChart = new Chart(    
+            document.getElementById('theChart'),
+            config
+        );
+
     }
 
 </script>
