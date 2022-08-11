@@ -108,9 +108,9 @@
             }
         }
     
-        let labelsFirst = document.getElementById("first") + document.getElementById("second") + document.getElementById("third");
+        const labelsFirstArray = [document.getElementById("first"), document.getElementById("second"), document.getElementById("third")];
         const dataFirst = {
-            labels: labelsFirst,
+            labels: labelsFirstArray,
             datasets: [{
             label: '最急迫想要擁有的現況滿意評分',
             data: [firstAnswer, secondAnswer, thirdAnswer],
@@ -145,9 +145,10 @@
             config
         );
 
-        let labelsLast = document.getElementById("twelfth") + document.getElementById("eleventh") + document.getElementById("tenth");
+
+        const labelsLastArray = [document.getElementById("twelfth"), document.getElementById("eleventh"), document.getElementById("tenth")];
         const dataLast = {
-            labels: labelsLast,
+            labels: labelsLastArray,
             datasets: [{
             label: '最不急迫想要擁有的現況滿意評分',
             data: [twelfthAnswer, eleventhAnswer, tenthAnswer],
