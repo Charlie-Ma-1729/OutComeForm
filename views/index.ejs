@@ -626,15 +626,15 @@
         ]
 
         for(let i=0; i<inputArr.length; i++){
-            if(inputArr[i]<1||inputArr[i]>12){
-                alert("優先順序請勿重複!!");
+            if(inputArr[i]==-1){
+                alert("優先順序請勿空白!!");
                 returnToPreviousPage();
                 return false;
             }
         }
 
         for(let i=0; i<answerInputArr.length; i++){
-            if(answerInputArr[i]<1||answerInputArr[i]>12){
+            if(answerInputArr[i]==-1){
                 alert("滿意評分請勿空白!!");
                 returnToPreviousPage();
                 return false;
@@ -655,9 +655,7 @@
                 }
                 else{}
             }
-        }
-
-        
+        }  
 
         //let inputArr = [
         //document.forms["Form"]["sortIndependence"].value,
