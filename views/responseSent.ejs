@@ -39,15 +39,17 @@
         <li id="tenth"></li>
         <p id="tenthcon"></p>
     </ol>
-    <!--
+    
     <div style="width: 80%;margin:10% 10% 5% 10% ">
         <canvas id="theChartFirst"></canvas>
     </div>
+
     <div style="width: 80%;margin:10% 10% 5% 10% ">
         <canvas id="theChartLast"></canvas>
-    -->
+    
     </div>
-    <div style="width: 80%;margin:10% 10% 5% 10% ">
+    <!--<div style="width: 80%;margin:10% 10% 5% 10% ">-->
+    <div style="width:400" height="200">
         <canvas id="theChart"></canvas>
     </div>
     <div align="center" style="margin-bottom:5%">
@@ -110,10 +112,9 @@
             }
         }
     
-        const labelsFirstArray = [("first").text, ("second").text, ("third").text];
-        //const labelsFirstArray = [document.getElementById("first"), document.getElementById("second"), document.getElementById("third")];
-        const labelFirst = document.getElementById("first") + document.getElementById("second") + document.getElementById("third");
-        /*
+        const labelsFirstArray = [("first").textContent, ("second").textContent, ("third").textContent];
+        //const labelsFirstArray = [document.getElementById("first").textContent, document.getElementById("second").textContent, document.getElementById("third").textContent];
+        
         const dataFirst = {
             labels: labelsFirstArray,
             datasets: [{
@@ -135,7 +136,7 @@
 
         const configFirst = {
             type: 'bar',
-            data: data,
+            data: dataFirst,
             options: {
                 scales: {
                     y: {
@@ -147,12 +148,12 @@
 
         const myChartFirst = new Chart(    
             document.getElementById('theChartFirst'),
-            config
+            configFirst
         );
-        */
+        
 
         const labelsLastArray = [document.getElementById("twelfth"), document.getElementById("eleventh"), document.getElementById("tenth")];
-        /*
+        
         const dataLast = {
             labels: labelsLastArray,
             datasets: [{
@@ -174,7 +175,7 @@
 
         const configLast = {
             type: 'bar',
-            data: data,
+            data: dataLast,
             options: {
                 scales: {
                     y: {
@@ -186,13 +187,13 @@
 
         const myChartLast = new Chart(    
             document.getElementById('theChartLast'),
-            config
+            configLast
         );
-        */
+        
 
         
         const labels = titleArray; 
-        /*
+        
         const data = {
             labels: labels,
             datasets: [{
@@ -212,8 +213,8 @@
             document.getElementById('theChart'),
             config
         );
-        */
-
+        
+        /*
         const data = {
             labels: labelsFirstArray,
             datasets: [{
@@ -249,7 +250,7 @@
             document.getElementById('theChart'),
             config
         );
-
+        */
     }
 
 </script>
