@@ -12,6 +12,21 @@
 
 <body onload="startup()">
     <h1>您的回覆已送出</h1>
+    <h3>姓名:<%= user %>，您好：<br></h3>
+    <h3>您的Outcome性格分析評估報告結果為，您
+        第一個最迫切想要擁有的目標是<p id="first"></p>代表著您想<p id="firstcon"></p>；
+        第二個迫切想要擁有的目標是<p id="second"></p>，代表著您想<p id="secondcon"></p>；
+        第三個想要擁有的目標是<p id="third"></p>，代表著您想<p id="thirdcon"></p><br>
+    </h3>
+    <h3>您
+        第一個最迫切想要擁有的目標是<p id="twelfth"></p>代表著您想<p id="twelfthcon"></p>；
+        第二個迫切想要擁有的目標是<p id="eleventh"></p>，代表著您想<p id="eleventhcon"></p>；
+        第三個想要擁有的目標是<p id="tenth"></p>，代表著您想<p id="tenthcon"></p><br>
+    </h3>
+    <h3>若您欲了解更多，請和李品睿老師接洽，Email為：</h3>
+    <h3>下載本頁Outcome性格分析報告：<a href="file/example.pdf" download="<%= user %>的Outcome性格分析報告.pdf"></a></h3>
+
+
     <h4>姓名:<%= user %>
     </h4>
     <h4>年齡:<%= age %>
@@ -40,16 +55,16 @@
         <p id="tenthcon"></p>
     </ol>
     
-    <div style="width: 80%;margin:10% 10% 5% 10% ">
+    <div style="width: 50%;margin:10% 10% 5% 10% ">
         <canvas id="theChartFirst"></canvas>
     </div>
 
-    <div style="width: 80%;margin:10% 10% 5% 10% ">
+    <div style="width: 50%;margin:10% 10% 5% 10% ">
         <canvas id="theChartLast"></canvas>
     
     </div>
-    <!--<div style="width: 80%;margin:10% 10% 5% 10% ">-->
-    <div style="width:400" height="200">
+    
+    <div style="width: 50%;margin:10% 10% 5% 10% ">>
         <canvas id="theChart"></canvas>
     </div>
     <div align="center" style="margin-bottom:5%">
@@ -74,17 +89,17 @@
 
         for (let i = 0; i < sortArray.length; i++) {
             if (sortArray[i] == 1) {
-                document.getElementById("first").textContent = titleArray[i] + "，滿意度為" + answerArray[i];
+                document.getElementById("first").textContent = titleArray[i] + "，現況滿意度評分為" + answerArray[i] + "顆★";
                 firstAnswer = answerArray[i];
                 document.getElementById("firstcon").textContent = conclusionArray[i];
             }
             if (sortArray[i] == 2) {
-                document.getElementById("second").textContent = titleArray[i] + "，滿意度為" + answerArray[i];
+                document.getElementById("second").textContent = titleArray[i] + "，現況滿意度評分為" + answerArray[i] + "顆★";
                 secondAnswer = answerArray[i];
                 document.getElementById("secondcon").textContent = conclusionArray[i];
             }
             if (sortArray[i] == 3) {
-                document.getElementById("third").textContent = titleArray[i] + "，滿意度為" + answerArray[i];
+                document.getElementById("third").textContent = titleArray[i] + "，現況滿意度評分為" + answerArray[i] + "顆★";
                 thirdAnswer = answerArray[i];
                 document.getElementById("thirdcon").textContent = conclusionArray[i];
             }
