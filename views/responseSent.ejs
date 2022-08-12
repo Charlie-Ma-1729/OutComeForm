@@ -7,6 +7,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <title>回覆已送出</title>
+    <style type="text/css">
+        *{
+            margin: auto;
+            padding: inherit;
+            list-style: none;
+        }
+        .body{
+            width: auto;
+            height: auto;
+            font-size-adjust: auto;
+            display: flex;
+            width: 90%;
+        }
+    </style>
 </head>
 
 <body onload="startup()">
@@ -15,12 +29,12 @@
     <h3>您今年<%= age %>歲，目前的工作內容為<%= career %></h3>
     <h3>您的Outcome性格分析評估報告結果為：
         第一個最迫切想要擁有的目標是<b id="first"></b>代表著您想<b id="firstcon"></b>
-        第二個迫切想要擁有的目標是<b id="second"></b>，代表著您想<b id="secondcon"></b>
-        第三個想要擁有的目標是<b id="third"></b>，代表著您想<b id="thirdcon"></h3><b>
+        第二個迫切想要擁有的目標是<b id="second"></b>代表著您想<b id="secondcon"></b>
+        第三個想要擁有的目標是<b id="third"></b>代表著您想<b id="thirdcon"></h3><b>
     </h3>
     <h3>您的第一個已經擁有且最滿意的現況是<b id="twelfth"></b>代表著您想<b id="twelfthcon"></b>
-        第二個已經擁有且第二滿意的現況是<b id="eleventh"></b>，代表著您想<b id="eleventhcon"></b>
-        第三個已經擁有且第三滿意的現況是<b id="tenth"></b>，代表著您想<b id="tenthcon"></b><br>
+        第二個已經擁有且第二滿意的現況是<b id="eleventh"></b>代表著您想<b id="eleventhcon"></b>
+        第三個已經擁有且第三滿意的現況是<b id="tenth"></b>代表著您想<b id="tenthcon"></b><br>
     </h3>
     <h3>若您欲了解更多，請和李品睿老師接洽，Email為：</h3>
     <h3>下載本頁Outcome性格分析報告，將結果寄至我的Email（<%= email %>）：
@@ -57,16 +71,16 @@
     </ol>
 ----->
 
-    <div style="width: 50%;margin:10% 10% 10% 10% ">
+    <div align="center" style="width: 50%;margin:10% 10% 10% 10% ">
         <canvas id="theChartFirst"></canvas>
     </div>
 
-    <div style="width: 50%;margin:10% 10% 10% 10% ">
+    <div align="center" style="width: 50%;margin:10% 10% 10% 10% ">
         <canvas id="theChartLast"></canvas>
     
     </div>
     
-    <div style="width: 50%;margin:10% 10% 10% 10% ">>
+    <div align="center" style="width: 50%;margin:10% 10% 10% 10% ">>
         <canvas id="theChart"></canvas>
     </div>
     <div align="center" style="margin-bottom:5%">
