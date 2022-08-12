@@ -98,6 +98,12 @@
             <td id="a12th"></td>
         </tr>
     </table>
+    <div style="width: 90%;margin:10% 5% 10% 10% ">
+        <canvas id="theChartFirst"></canvas>
+    </div>
+    <div style="width: 90%;margin:10% 5% 10% 10% ">
+        <canvas id="theChartLast"></canvas>  
+    </div>
     <div style="width: 80%;margin:10%">
         <canvas id="theChart"></canvas>
     </div>
@@ -169,6 +175,78 @@
                     break;
             }
         }
+
+
+        const labelsFirstArray = [document.getElementById("1st").textContent, document.getElementById("2nd").textContent, document.getElementById("3rd").textContent, document.getElementById("4th").textContent.textContent, document.getElementById("5th").textContent.textContent, document.getElementById("6th").textContent.textContent, document.getElementById("7th").textContent.textContent, document.getElementById("8th").textContent.textContent, document.getElementById("9th").textContent.textContent, document.getElementById("10th").textContent.textContent, document.getElementById("11th").textContent.textContent, document.getElementById("12th").textContent];
+        const dataFirst = {
+            labels: labelsFirstArray,
+            datasets: [{
+            label: '最急迫想要擁有的現況滿意評分',
+            data: [firstAnswer, secondAnswer, thirdAnswer],
+            backgroundColor: [
+            'rgba(255, 99, 132, 0.2)',
+            'rgba(255, 159, 64, 0.2)',
+            'rgba(255, 205, 86, 0.2)'
+            ],
+            borderColor: [
+            'rgb(255, 99, 132)',
+            'rgb(255, 159, 64)',
+            'rgb(255, 205, 86)'
+            ],
+            borderWidth: 1
+            }]
+        };
+
+        const configFirst = {
+            type: 'bar',
+            data: dataFirst,
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            },
+        };
+
+        const myChartFirst = new Chart(    
+            document.getElementById('theChartFirst'),
+            configFirst
+        );
+        
+
+        const labelsLastArray = [document.getElementById("1st").textContent, document.getElementById("2nd").textContent, document.getElementById("3rd").textContent, document.getElementById("4th").textContent.textContent, document.getElementById("5th").textContent.textContent, document.getElementById("6th").textContent.textContent, document.getElementById("7th").textContent.textContent, document.getElementById("8th").textContent.textContent, document.getElementById("9th").textContent.textContent, document.getElementById("10th").textContent.textContent, document.getElementById("11th").textContent.textContent, document.getElementById("12th").textContent];
+        const dataLast = {
+            labels: labelsLastArray,
+            datasets: [{
+            label: '最不急迫想要擁有的現況滿意評分',
+            data: [twelfthAnswer, eleventhAnswer, tenthAnswer],
+            backgroundColor: [
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(153, 102, 255, 0.2)',
+            'rgba(201, 203, 207, 0.2)'
+            ],
+            borderColor: [
+            'rgb(54, 162, 235)',
+            'rgb(153, 102, 255)',
+            'rgb(201, 203, 207)'
+            ],
+            borderWidth: 1
+            }]
+        };
+
+        const configLast = {
+            type: 'bar',
+            data: dataLast,
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            },
+        };
+
         const labels = titleArray;
 
         const data = {
