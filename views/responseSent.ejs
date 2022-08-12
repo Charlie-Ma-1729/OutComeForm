@@ -6,27 +6,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <!--<script src="https://www.chartjs.org/docs/latest/charts/bar.html"></script>-->
     <title>回覆已送出</title>
 </head>
 
 <body onload="startup()">
     <h1>您的回覆已送出</h1>
     <h3><%= user %>，您好：<br></h3>
-    <h3>您的Outcome性格分析評估報告結果為，
-        第一個最迫切想要擁有的目標是<b id="first"></b>代表著您想<b id="firstcon"></b>；
-        第二個迫切想要擁有的目標是<b id="second"></b>，代表著您想<b id="secondcon"></b>；
+    <h3>您今年<%= age %>歲，目前的工作內容為<%= career %></h3>
+    <h3>您的Outcome性格分析評估報告結果為：
+        第一個最迫切想要擁有的目標是<b id="first"></b>代表著您想<b id="firstcon"></b>
+        第二個迫切想要擁有的目標是<b id="second"></b>，代表著您想<b id="secondcon"></b>
         第三個想要擁有的目標是<b id="third"></b>，代表著您想<b id="thirdcon"></h3><b>
     </h3>
-    <h3>您
-        第一個已經擁有且最滿意的現況是<b id="twelfth"></b>代表著您想<b id="twelfthcon"></b>；
-        第二個已經擁有且第二滿意的現況是<b id="eleventh"></b>，代表著您想<b id="eleventhcon"></b>；
+    <h3>您的第一個已經擁有且最滿意的現況是<b id="twelfth"></b>代表著您想<b id="twelfthcon"></b>
+        第二個已經擁有且第二滿意的現況是<b id="eleventh"></b>，代表著您想<b id="eleventhcon"></b>
         第三個已經擁有且第三滿意的現況是<b id="tenth"></b>，代表著您想<b id="tenthcon"></b><br>
     </h3>
     <h3>若您欲了解更多，請和李品睿老師接洽，Email為：</h3>
-    <h3>下載本頁Outcome性格分析報告：<a href="file/outcome.pdf" download="Outcome性格分析報告.pdf"></a></h3>
+    <h3>下載本頁Outcome性格分析報告，將結果寄至我的Email（<%= email %>）：
+        <a href="file/outcome.pdf" download="Outcome性格分析報告.pdf"></a>
+    </h3>
 
-
+<!----
     <h4>姓名:<%= user %>
     </h4>
     <h4>年齡:<%= age %>
@@ -54,17 +55,18 @@
         <li id="tenth"></li>
         <p id="tenthcon"></p>
     </ol>
-    
-    <div style="width: 50%;margin:10% 10% 5% 10% ">
+----->
+
+    <div style="width: 50%;margin:10% 10% 10% 10% ">
         <canvas id="theChartFirst"></canvas>
     </div>
 
-    <div style="width: 50%;margin:10% 10% 5% 10% ">
+    <div style="width: 50%;margin:10% 10% 10% 10% ">
         <canvas id="theChartLast"></canvas>
     
     </div>
     
-    <div style="width: 50%;margin:10% 10% 5% 10% ">>
+    <div style="width: 50%;margin:10% 10% 10% 10% ">>
         <canvas id="theChart"></canvas>
     </div>
     <div align="center" style="margin-bottom:5%">
@@ -81,7 +83,7 @@
         let titleArray;
         titleArray = ['獨立性', '認同感', '成就感', '休閒時間', '權力', '聲望', '金錢', '推動力', '自尊', '家庭生活', '安全感', '個人成長'];
         let conclusionArray;
-        conclusionArray = ['按照自己的想法進行自己的展業工作，獨立的管理......成為自己的老闆。','因表現優良得到實質獎勵，例如在公開場合或演講會中予以表揚。','成功的完成工作後所獲致的感覺。......克服障礙以及成就目標。','可以依自己的意願安排非業務時間，以及從那些非業務時間安排所達到的愉悅程度。','一種能控制及掌握自己以及他人命運的感覺......能夠影響以及指導他人行為的感覺。','獲得同事，公司或社團組織的尊敬......別人對你在同事中“表現出眾”的感覺程度。','工作所能帶給個人的財務收入之多寡。','不斷提昇工作績效表現的需要或感覺。','對自我價值看法......在自己心目中，與群體相較自認為出眾的程度。','與家人相處生活的時間與品質。','維持現有工作的穩定性......明天會更好的感受程度。','個人能成長的空間，能夠變得更有能力，更有效率更優秀的感覺。'];
+        conclusionArray = ['按照自己的想法進行自己的展業工作，獨立的管理，成為自己的老闆。','因表現優良得到實質獎勵，例如在公開場合或演講會中予以表揚。','成功的完成工作後所獲致的感覺。克服障礙以及成就目標。','可以依自己的意願安排非業務時間，以及從那些非業務時間安排所達到的愉悅程度。','一種能控制及掌握自己以及他人命運的感覺，能夠影響以及指導他人行為的感覺。','獲得同事，公司或社團組織的尊敬，別人對你在同事中“表現出眾”的感覺程度。','工作所能帶給個人的財務收入之多寡。','不斷提昇工作績效表現的需要或感覺。','對自我價值看法，在自己心目中，與群體相較自認為出眾的程度。','與家人相處生活的時間與品質。','維持現有工作的穩定性，明天會更好的感受程度。','個人能成長的空間，能夠變得更有能力，更有效率更優秀的感覺。'];
 
         let firstAnswer = 0;
         let secondAnswer = 0;
@@ -89,17 +91,17 @@
 
         for (let i = 0; i < sortArray.length; i++) {
             if (sortArray[i] == 1) {
-                document.getElementById("first").textContent = titleArray[i] + "，現況滿意度評分為" + answerArray[i] + "顆★";
+                document.getElementById("first").textContent = titleArray[i] + "，現況滿意度評分為" + answerArray[i] + "顆★，";
                 firstAnswer = answerArray[i];
                 document.getElementById("firstcon").textContent = conclusionArray[i];
             }
             if (sortArray[i] == 2) {
-                document.getElementById("second").textContent = titleArray[i] + "，現況滿意度評分為" + answerArray[i] + "顆★";
+                document.getElementById("second").textContent = titleArray[i] + "，現況滿意度評分為" + answerArray[i] + "顆★，";
                 secondAnswer = answerArray[i];
                 document.getElementById("secondcon").textContent = conclusionArray[i];
             }
             if (sortArray[i] == 3) {
-                document.getElementById("third").textContent = titleArray[i] + "，現況滿意度評分為" + answerArray[i] + "顆★";
+                document.getElementById("third").textContent = titleArray[i] + "，現況滿意度評分為" + answerArray[i] + "顆★，";
                 thirdAnswer = answerArray[i];
                 document.getElementById("thirdcon").textContent = conclusionArray[i];
             }
@@ -111,17 +113,17 @@
 
         for (let i = 0; i < sortArray.length; i++) {
             if (sortArray[i] == 12) {
-                document.getElementById("twelfth").textContent = titleArray[i] + "，滿意度為" + answerArray[i];
+                document.getElementById("twelfth").textContent = titleArray[i] + "，滿意度為" + answerArray[i] + "顆★，";
                 twelfthAnswer = answerArray[i];
                 document.getElementById("twelfthcon").textContent = conclusionArray[i];
             }
             if (sortArray[i] == 11) {
-                document.getElementById("eleventh").textContent = titleArray[i] + "，滿意度為" + answerArray[i];
+                document.getElementById("eleventh").textContent = titleArray[i] + "，滿意度為" + answerArray[i] + "顆★，";
                 eleventhAnswer = answerArray[i];
                 document.getElementById("eleventhcon").textContent = conclusionArray[i];
             }
             if (sortArray[i] == 10) {
-                document.getElementById("tenth").textContent = titleArray[i] + "，滿意度為" + answerArray[i];
+                document.getElementById("tenth").textContent = titleArray[i] + "，滿意度為" + answerArray[i] + "顆★，";
                 tenthAnswer = answerArray[i];
                 document.getElementById("tenthcon").textContent = conclusionArray[i];
             }
