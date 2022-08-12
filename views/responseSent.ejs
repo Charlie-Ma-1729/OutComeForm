@@ -12,6 +12,75 @@
 <body onload="startup()">
     <h1>您的回覆已送出</h1>
     <h3><%= user %>，您好：<br></h3>
+    <h3>您的排序結果如下方表格</h3>
+    <table>
+        <tr>
+            <th>優先順序</th>
+            <th>項目</th>
+            <th>現況滿意度</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td id="1st"></td>
+            <td id="a1st"></td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td id="2nd"></td>
+            <td id="a2nd"></td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td id="3rd"></td>
+            <td id="a3rd"></td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td id="4th"></td>
+            <td id="a4th"></td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td id="5th"></td>
+            <td id="a5th"></td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td id="6th"></td>
+            <td id="a6th"></td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td id="7th"></td>
+            <td id="a7th"></td>
+        </tr>
+        <tr>
+            <td>8</td>
+            <td id="8th"></td>
+            <td id="a8th"></td>
+        </tr>
+        <tr>
+            <td>9</td>
+            <td id="9th"></td>
+            <td id="a9th"></td>
+        </tr>
+        <tr>
+            <td>10</td>
+            <td id="10th"></td>
+            <td id="a10th"></td>
+        </tr>
+        <tr>
+            <td>11</td>
+            <td id="11th"></td>
+            <td id="a11th"></td>
+        </tr>
+        <tr>
+            <td>12</td>
+            <td id="12th"></td>
+            <td id="a12th"></td>
+        </tr>
+    </table>
+
     <h3>您今年<%= age %>歲，目前的工作內容為<%= career %>。</h3>
     <h3>您的Outcome性格分析評估報告結果為：
         第一個最迫切想要擁有的目標是<b id="first"></b>，代表著您想<b id="firstcon"></b>
@@ -76,6 +145,71 @@
 
 <script>
     function startup() {
+        let sortArray4table;
+        sortArray = ['<%= userdata.sortIndependence %>', '<%= userdata.sortIdentity %>', '<%= userdata.sortAchievement %>', '<%= userdata.sortFreeTime %>', '<%= userdata.sortPower %>', '<%= userdata.sortReputation %>', '<%= userdata.sortMoney %>', '<%= userdata.sortExormisis %>', '<%= userdata.sortSelfEsteem %>', '<%= userdata.sortFamily %>', '<%= userdata.sortSafety %>', '<%= userdata.sortGrowth %>'];
+        let answerArray4table;
+        answerArray = ['<%= userdata.answerIndependence %>', '<%= userdata.answerIdentity %>', '<%= userdata.answerAchievement %>', '<%= userdata.answerFreeTime %>', '<%= userdata.answerPower %>', '<%= userdata.answerReputation %>', '<%= userdata.answerMoney %>', '<%= userdata.answerExormisis %>', '<%= userdata.answerSelfEsteem %>', '<%= userdata.answerFamily %>', '<%= userdata.answerSafety %>', '<%= userdata.answerGrowth %>'];
+        let titleArray4table;
+        titleArray = ['獨立性', '認同感', '成就感', '休閒時間', '權力', '聲望', '金錢', '推動力', '自尊', '家庭生活', '安全感', '個人成長'];
+        let subtitleArray4table;
+        subtitleArray4table = ['獨立性/自由做你自己想做的事; 能擺脫他人影響', '認同感/成就被肯定，表現有獎勵。', '成就感/成功完成工作，克服障礙，達成目標。', '休閒時間/從事工作以外你喜歡的休閒活動。', '權力/控制別人; 影響、主控。', '聲望/名聲、排行、受尊敬。', '金錢/個人所得的累積，五字登科的能力。', '推動力/要想一直改進工作表現的感覺或需要。', '自尊/你覺得自己有價值的一種感覺，自主性強。', '家庭生活/偏好家庭為中心的活動與興趣。', '安全感/關切工作的安全與穩定、安定。', '個人成長/能力及效率的發展，變成一個比較優秀的人。'];
+        console.log(sortArray4table,answerArray4table,titleArray4table,subtitleArray4table)
+
+        for (let i = 0; i < sortArray4table.length; i++) {
+            switch (sortArray[i]) {
+                case '1':
+                    document.getElementById("1st").textContent = subtitleArray4table[i];
+                    document.getElementById("a1st").textContent = answerArray4table[i];
+                    break;
+                case '2':
+                    document.getElementById("2nd").textContent = subtitleArray4table[i];
+                    document.getElementById("a2nd").textContent = answerArray4table[i];
+                    break;
+                case '3':
+                    document.getElementById("3rd").textContent = subtitleArray4table[i];
+                    document.getElementById("a3rd").textContent = answerArray4table[i];
+                    break;
+                case '4':
+                    document.getElementById("4th").textContent = subtitleArray4table[i];
+                    document.getElementById("a4th").textContent = answerArray4table[i];
+                    break;
+                case '5':
+                    document.getElementById("5th").textContent = subtitleArray4table[i];
+                    document.getElementById("a5th").textContent = answerArray4table[i];
+                    break;
+                case '6':
+                    document.getElementById("6th").textContent = subtitleArray4table[i];
+                    document.getElementById("a6th").textContent = answerArray4table[i];
+                    break;
+                case '7':
+                    document.getElementById("7th").textContent = subtitleArray4table[i];
+                    document.getElementById("a7th").textContent = answerArray4table[i];
+                    break;
+                case '8':
+                    document.getElementById("8th").textContent = subtitleArray4table[i];
+                    document.getElementById("a8th").textContent = answerArray4table[i];
+                    break;
+                case '9':
+                    document.getElementById("9th").textContent = subtitleArray4table[i];
+                    document.getElementById("a9th").textContent = answerArray4table[i];
+                    break;
+                case '10':
+                    document.getElementById("10th").textContent = subtitleArray4table[i];
+                    document.getElementById("a10th").textContent = answerArray4table[i];
+                    break;
+
+                case '11':
+                    document.getElementById("11th").textContent = subtitleArray4table[i];
+                    document.getElementById("a11th").textContent = answerArray4table[i];
+                    break;
+                case '12':
+                    document.getElementById("12th").textContent = subtitleArray4table[i];
+                    document.getElementById("a12th").textContent = answerArray4table[i];
+                    break;
+            }
+        }
+
+
         let sortArray;
         sortArray = ['<%= sortIndependence %>', '<%= sortIdentity %>', '<%= sortAchievement %>', '<%= sortFreeTime %>', '<%= sortPower %>', '<%= sortReputation %>', '<%= sortMoney %>', '<%= sortExormisis %>', '<%= sortSelfEsteem %>', '<%= sortFamily %>', '<%= sortSafety %>', '<%= sortGrowth %>'];
         let answerArray;
