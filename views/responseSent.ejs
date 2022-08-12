@@ -145,71 +145,72 @@
 
 <script>
     function startup() {
-        let sortArray4table;
-        sortArray4table = ['<%= userdata.sortIndependence %>', '<%= userdata.sortIdentity %>', '<%= userdata.sortAchievement %>', '<%= userdata.sortFreeTime %>', '<%= userdata.sortPower %>', '<%= userdata.sortReputation %>', '<%= userdata.sortMoney %>', '<%= userdata.sortExormisis %>', '<%= userdata.sortSelfEsteem %>', '<%= userdata.sortFamily %>', '<%= userdata.sortSafety %>', '<%= userdata.sortGrowth %>'];
-        let answerArray4table;
-        answerArray4table = ['<%= userdata.answerIndependence %>', '<%= userdata.answerIdentity %>', '<%= userdata.answerAchievement %>', '<%= userdata.answerFreeTime %>', '<%= userdata.answerPower %>', '<%= userdata.answerReputation %>', '<%= userdata.answerMoney %>', '<%= userdata.answerExormisis %>', '<%= userdata.answerSelfEsteem %>', '<%= userdata.answerFamily %>', '<%= userdata.answerSafety %>', '<%= userdata.answerGrowth %>'];
-        let titleArray4table;
-        titleArray4table = ['獨立性', '認同感', '成就感', '休閒時間', '權力', '聲望', '金錢', '推動力', '自尊', '家庭生活', '安全感', '個人成長'];
-        let subtitleArray4table;
-        subtitleArray4table = ['獨立性/自由做你自己想做的事; 能擺脫他人影響', '認同感/成就被肯定，表現有獎勵。', '成就感/成功完成工作，克服障礙，達成目標。', '休閒時間/從事工作以外你喜歡的休閒活動。', '權力/控制別人; 影響、主控。', '聲望/名聲、排行、受尊敬。', '金錢/個人所得的累積，五字登科的能力。', '推動力/要想一直改進工作表現的感覺或需要。', '自尊/你覺得自己有價值的一種感覺，自主性強。', '家庭生活/偏好家庭為中心的活動與興趣。', '安全感/關切工作的安全與穩定、安定。', '個人成長/能力及效率的發展，變成一個比較優秀的人。'];
-        console.log(sortArray4table,answerArray4table,titleArray4table,subtitleArray4table)
+        let sortArray;
+        sortArray = ['<%= sortIndependence %>', '<%= sortIdentity %>', '<%= sortAchievement %>', '<%= sortFreeTime %>', '<%= sortPower %>', '<%= sortReputation %>', '<%= sortMoney %>', '<%= sortExormisis %>', '<%= sortSelfEsteem %>', '<%= sortFamily %>', '<%= sortSafety %>', '<%= sortGrowth %>'];
+        let answerArray;
+        answerArray = ['<%= answerIndependence %>', '<%= answerIdentity %>', '<%= answerAchievement %>', '<%= answerFreeTime %>', '<%= answerPower %>', '<%= answerReputation %>', '<%= answerMoney %>', '<%= answerExormisis %>', '<%= answerSelfEsteem %>', '<%= answerFamily %>', '<%= answerSafety %>', '<%= answerGrowth %>'];
+        let titleArray;
+        titleArray = ['獨立性', '認同感', '成就感', '休閒時間', '權力', '聲望', '金錢', '推動力', '自尊', '家庭生活', '安全感', '個人成長'];
+        
+        let subtitleArray;
+        subtitleArray = ['獨立性/自由做你自己想做的事; 能擺脫他人影響', '認同感/成就被肯定，表現有獎勵。', '成就感/成功完成工作，克服障礙，達成目標。', '休閒時間/從事工作以外你喜歡的休閒活動。', '權力/控制別人; 影響、主控。', '聲望/名聲、排行、受尊敬。', '金錢/個人所得的累積，五字登科的能力。', '推動力/要想一直改進工作表現的感覺或需要。', '自尊/你覺得自己有價值的一種感覺，自主性強。', '家庭生活/偏好家庭為中心的活動與興趣。', '安全感/關切工作的安全與穩定、安定。', '個人成長/能力及效率的發展，變成一個比較優秀的人。'];
+        console.log(sortArray,answerArray,titleArray,subtitleArray)
 
         for (let i = 0; i < sortArray4table.length; i++) {
             switch (sortArray[i]) {
                 case '1':
-                    document.getElementById("1st").textContent = subtitleArray4table[i];
-                    document.getElementById("a1st").textContent = answerArray4table[i];
+                    document.getElementById("1st").textContent = subtitleArray[i];
+                    document.getElementById("a1st").textContent = answerArray[i];
                     break;
                 case '2':
-                    document.getElementById("2nd").textContent = subtitleArray4table[i];
-                    document.getElementById("a2nd").textContent = answerArray4table[i];
+                    document.getElementById("2nd").textContent = subtitleArray[i];
+                    document.getElementById("a2nd").textContent = answerArray[i];
                     break;
                 case '3':
-                    document.getElementById("3rd").textContent = subtitleArray4table[i];
-                    document.getElementById("a3rd").textContent = answerArray4table[i];
+                    document.getElementById("3rd").textContent = subtitleArray[i];
+                    document.getElementById("a3rd").textContent = answerArray[i];
                     break;
                 case '4':
-                    document.getElementById("4th").textContent = subtitleArray4table[i];
-                    document.getElementById("a4th").textContent = answerArray4table[i];
+                    document.getElementById("4th").textContent = subtitleArray[i];
+                    document.getElementById("a4th").textContent = answerArray[i];
                     break;
                 case '5':
-                    document.getElementById("5th").textContent = subtitleArray4table[i];
-                    document.getElementById("a5th").textContent = answerArray4table[i];
+                    document.getElementById("5th").textContent = subtitleArray[i];
+                    document.getElementById("a5th").textContent = answerArray[i];
                     break;
                 case '6':
-                    document.getElementById("6th").textContent = subtitleArray4table[i];
-                    document.getElementById("a6th").textContent = answerArray4table[i];
+                    document.getElementById("6th").textContent = subtitleArray[i];
+                    document.getElementById("a6th").textContent = answerArray[i];
                     break;
                 case '7':
-                    document.getElementById("7th").textContent = subtitleArray4table[i];
-                    document.getElementById("a7th").textContent = answerArray4table[i];
+                    document.getElementById("7th").textContent = subtitleArray[i];
+                    document.getElementById("a7th").textContent = answerArray[i];
                     break;
                 case '8':
-                    document.getElementById("8th").textContent = subtitleArray4table[i];
-                    document.getElementById("a8th").textContent = answerArray4table[i];
+                    document.getElementById("8th").textContent = subtitleArray[i];
+                    document.getElementById("a8th").textContent = answerArray[i];
                     break;
                 case '9':
-                    document.getElementById("9th").textContent = subtitleArray4table[i];
-                    document.getElementById("a9th").textContent = answerArray4table[i];
+                    document.getElementById("9th").textContent = subtitleArray[i];
+                    document.getElementById("a9th").textContent = answerArray[i];
                     break;
                 case '10':
-                    document.getElementById("10th").textContent = subtitleArray4table[i];
-                    document.getElementById("a10th").textContent = answerArray4table[i];
+                    document.getElementById("10th").textContent = subtitleArray[i];
+                    document.getElementById("a10th").textContent = answerArray[i];
                     break;
 
                 case '11':
-                    document.getElementById("11th").textContent = subtitleArray4table[i];
-                    document.getElementById("a11th").textContent = answerArray4table[i];
+                    document.getElementById("11th").textContent = subtitleArray[i];
+                    document.getElementById("a11th").textContent = answerArray[i];
                     break;
                 case '12':
-                    document.getElementById("12th").textContent = subtitleArray4table[i];
-                    document.getElementById("a12th").textContent = answerArray4table[i];
+                    document.getElementById("12th").textContent = subtitleArray[i];
+                    document.getElementById("a12th").textContent = answerArray[i];
                     break;
             }
         }
 
-
+        /*
         let sortArray;
         sortArray = ['<%= sortIndependence %>', '<%= sortIdentity %>', '<%= sortAchievement %>', '<%= sortFreeTime %>', '<%= sortPower %>', '<%= sortReputation %>', '<%= sortMoney %>', '<%= sortExormisis %>', '<%= sortSelfEsteem %>', '<%= sortFamily %>', '<%= sortSafety %>', '<%= sortGrowth %>'];
         let answerArray;
@@ -218,6 +219,11 @@
         titleArray = ['獨立性', '認同感', '成就感', '休閒時間', '權力', '聲望', '金錢', '推動力', '自尊', '家庭生活', '安全感', '個人成長'];
         let conclusionArray;
         conclusionArray = ['按照自己的想法進行自己的展業工作，獨立的管理，成為自己的老闆。','因表現優良得到實質獎勵，例如在公開場合或演講會中予以表揚。','成功的完成工作後所獲致的感覺。克服障礙以及成就目標。','可以依自己的意願安排非業務時間，以及從那些非業務時間安排所達到的愉悅程度。','一種能控制及掌握自己以及他人命運的感覺，能夠影響以及指導他人行為的感覺。','獲得同事，公司或社團組織的尊敬，別人對你在同事中“表現出眾”的感覺程度。','工作所能帶給個人的財務收入之多寡。','不斷提昇工作績效表現的需要或感覺。','對自我價值看法，在自己心目中，與群體相較自認為出眾的程度。','與家人相處生活的時間與品質。','維持現有工作的穩定性，明天會更好的感受程度。','個人能成長的空間，能夠變得更有能力，更有效率更優秀的感覺。'];
+        */
+
+        let conclusionArray;
+        conclusionArray = ['按照自己的想法進行自己的展業工作，獨立的管理，成為自己的老闆。','因表現優良得到實質獎勵，例如在公開場合或演講會中予以表揚。','成功的完成工作後所獲致的感覺。克服障礙以及成就目標。','可以依自己的意願安排非業務時間，以及從那些非業務時間安排所達到的愉悅程度。','一種能控制及掌握自己以及他人命運的感覺，能夠影響以及指導他人行為的感覺。','獲得同事，公司或社團組織的尊敬，別人對你在同事中“表現出眾”的感覺程度。','工作所能帶給個人的財務收入之多寡。','不斷提昇工作績效表現的需要或感覺。','對自我價值看法，在自己心目中，與群體相較自認為出眾的程度。','與家人相處生活的時間與品質。','維持現有工作的穩定性，明天會更好的感受程度。','個人能成長的空間，能夠變得更有能力，更有效率更優秀的感覺。'];
+
 
         let firstAnswer = 0;
         let secondAnswer = 0;
