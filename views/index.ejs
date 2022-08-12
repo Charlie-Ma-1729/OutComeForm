@@ -634,6 +634,19 @@
             }
         }
 
+        //優先順序重複
+        for(let i=0; i<inputArr.length; i++){
+            for(let j=0; j<inputArr.length; j++){
+                if(i!=j){
+                    if(inputArr[i] == inputArr[j]){
+                        alert("優先順序請勿重複!!");
+                        returnToPreviousPage();
+                        return false;
+                    }
+                }
+            }
+        }
+
         //評分沒有選
         for(let i=0; i<answerInputArr.length; i++){
             if(answerInputArr[i]==0){
@@ -643,6 +656,7 @@
             }
         }
 
+        /*
         //順序在1~6，分數只能是1~3分；順序在7~12，分數只能是3~5分
         for(let i=0; i<inputArr.length; i++){
             for(let j=0; j<answerInputArr.length; j++){
@@ -675,6 +689,7 @@
                 */
             }
         }  
+        */
 
         //let inputArr = [
         //document.forms["Form"]["sortIndependence"].value,
@@ -691,17 +706,7 @@
         //document.forms["Form"]["sortGrowth"].value
         //];
 
-        for(let i=0; i<inputArr.length; i++){
-            for(let j=0; j<inputArr.length; j++){
-                if(i!=j){
-                    if(inputArr[i] == inputArr[j]){
-                        alert("優先順序請勿重複!!");
-                        returnToPreviousPage();
-                        return false;
-                    }
-                }
-            }
-        }
+        
         Form.submit();
         return true;
     }
