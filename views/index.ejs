@@ -657,40 +657,7 @@
         }
 
         
-        //順序在1~6，分數只能是1~3分；順序在7~12，分數只能是3~5分
-        for(let i=0; i<inputArr.length; i++){
-            for(let j=0; j<answerInputArr.length; j++){
-                /*
-                if(inputArr[i]==1||inputArr[i]==2||inputArr[i]==3||inputArr[i]==4||inputArr[i]==5||inputArr[i]==6){
-                    if(answerInputArr[j]==4||answerInputArr[j]==5){
-                        alert("若排序在1~6之間，各項評分請填入1~3顆★");
-                        returnToPreviousPage();
-                        return false;
-                    }
-                    else if(inputArr[i]==7||inputArr[i]==8||inputArr[i]==9||inputArr[i]==10||inputArr[i]==11||inputArr[i]==12){
-                        if(answerInputArr[j]==1||answerInputArr[j]==2){
-                            alert("若排序在7~12之間，各項評分請填入3~5顆★");
-                        returnToPreviousPage();
-                        return false;
-                        }
-                    }
-                }
-                */
-                
-                if(inputArr[i]<7&&answerInputArr[j]>3){
-                    alert("若排序在1~6之間，各項評分請填入1~3顆★");
-                    returnToPreviousPage();
-                    return false;
-                }
-                else if(inputArr[i]>6&&answerInputArr[j]<3){
-                    alert("若排序在7~12之間，各項評分請填入3~5顆★");
-                    returnToPreviousPage();
-                    return false;
-                }
-                else{}
-                
-            }
-        }  
+        
         
 
         //let inputArr = [
