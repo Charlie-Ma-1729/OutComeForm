@@ -108,6 +108,10 @@
         <canvas id="theChart"></canvas>
     </div>
 
+    <div align="center" style="margin-bottom:5%">
+        <a href="/responses" ><input type="submit" value="返回前頁"></a>
+    </div>
+
 </body>
 
 <script>
@@ -122,12 +126,12 @@
         subtitleArray = ['獨立性/自由做你自己想做的事; 能擺脫他人影響', '認同感/成就被肯定，表現有獎勵。', '成就感/成功完成工作，克服障礙，達成目標。', '休閒時間/從事工作以外你喜歡的休閒活動。', '權力/控制別人; 影響、主控。', '聲望/名聲、排行、受尊敬。', '金錢/個人所得的累積，五字登科的能力。', '推動力/要想一直改進工作表現的感覺或需要。', '自尊/你覺得自己有價值的一種感覺，自主性強。', '家庭生活/偏好家庭為中心的活動與興趣。', '安全感/關切工作的安全與穩定、安定。', '個人成長/能力及效率的發展，變成一個比較優秀的人。'];
         console.log(sortArray,answerArray,titleArray,subtitleArray)
         //
-        let sortArray4FL;
-        sortArray4FL = ['<%= sortIndependence %>', '<%= sortIdentity %>', '<%= sortAchievement %>', '<%= sortFreeTime %>', '<%= sortPower %>', '<%= sortReputation %>', '<%= sortMoney %>', '<%= sortExormisis %>', '<%= sortSelfEsteem %>', '<%= sortFamily %>', '<%= sortSafety %>', '<%= sortGrowth %>'];
-        let answerArray4FL;
-        answerArray4FL = ['<%= answerIndependence %>', '<%= answerIdentity %>', '<%= answerAchievement %>', '<%= answerFreeTime %>', '<%= answerPower %>', '<%= answerReputation %>', '<%= answerMoney %>', '<%= answerExormisis %>', '<%= answerSelfEsteem %>', '<%= answerFamily %>', '<%= answerSafety %>', '<%= answerGrowth %>'];    
-        let conclusionArray;
-        conclusionArray = ['按照自己的想法進行自己的展業工作，獨立的管理，成為自己的老闆。','因表現優良得到實質獎勵，例如在公開場合或演講會中予以表揚。','成功的完成工作後所獲致的感覺。克服障礙以及成就目標。','可以依自己的意願安排非業務時間，以及從那些非業務時間安排所達到的愉悅程度。','一種能控制及掌握自己以及他人命運的感覺，能夠影響以及指導他人行為的感覺。','獲得同事，公司或社團組織的尊敬，別人對你在同事中“表現出眾”的感覺程度。','工作所能帶給個人的財務收入之多寡。','不斷提昇工作績效表現的需要或感覺。','對自我價值看法，在自己心目中，與群體相較自認為出眾的程度。','與家人相處生活的時間與品質。','維持現有工作的穩定性，明天會更好的感受程度。','個人能成長的空間，能夠變得更有能力，更有效率更優秀的感覺。'];
+        //let sortArray4FL;
+        //sortArray4FL = ['<%= sortIndependence %>', '<%= sortIdentity %>', '<%= sortAchievement %>', '<%= sortFreeTime %>', '<%= sortPower %>', '<%= sortReputation %>', '<%= sortMoney %>', '<%= sortExormisis %>', '<%= sortSelfEsteem %>', '<%= sortFamily %>', '<%= sortSafety %>', '<%= sortGrowth %>'];
+        //let answerArray4FL;
+        //answerArray4FL = ['<%= answerIndependence %>', '<%= answerIdentity %>', '<%= answerAchievement %>', '<%= answerFreeTime %>', '<%= answerPower %>', '<%= answerReputation %>', '<%= answerMoney %>', '<%= answerExormisis %>', '<%= answerSelfEsteem %>', '<%= answerFamily %>', '<%= answerSafety %>', '<%= answerGrowth %>'];    
+        //let conclusionArray;
+        //conclusionArray = ['按照自己的想法進行自己的展業工作，獨立的管理，成為自己的老闆。','因表現優良得到實質獎勵，例如在公開場合或演講會中予以表揚。','成功的完成工作後所獲致的感覺。克服障礙以及成就目標。','可以依自己的意願安排非業務時間，以及從那些非業務時間安排所達到的愉悅程度。','一種能控制及掌握自己以及他人命運的感覺，能夠影響以及指導他人行為的感覺。','獲得同事，公司或社團組織的尊敬，別人對你在同事中“表現出眾”的感覺程度。','工作所能帶給個人的財務收入之多寡。','不斷提昇工作績效表現的需要或感覺。','對自我價值看法，在自己心目中，與群體相較自認為出眾的程度。','與家人相處生活的時間與品質。','維持現有工作的穩定性，明天會更好的感受程度。','個人能成長的空間，能夠變得更有能力，更有效率更優秀的感覺。'];
         
         let firstAnswer = 0;
         let secondAnswer = 0;
@@ -198,55 +202,55 @@
         }
 
         //
-        for (let i = 0; i < sortArray4FL.length; i++) {
+        for (let i = 0; i < sortArray.length; i++) {
             if (sortArray4FL[i] == 1) {
                 document.getElementById("first").textContent = titleArray[i];
-                firstAnswer = answerArray4FL[i];
+                firstAnswer = answerArray[i];
                 //document.getElementById("firstcon").textContent = conclusionArray[i];
             }
             if (sortArray4FL[i] == 2) {
                 document.getElementById("second").textContent = titleArray[i];
-                secondAnswer = answerArray4FL[i];
+                secondAnswer = answerArray[i];
             }
             if (sortArray4FL[i] == 3) {
                 document.getElementById("third").textContent = titleArray[i];
-                thirdAnswer = answerArray4FL[i];
+                thirdAnswer = answerArray[i];
             }
             if (sortArray4FL[i] == 4) {
                 document.getElementById("fourth").textContent = titleArray[i];
-                fourthAnswer = answerArray4FL[i];
+                fourthAnswer = answerArray[i];
             }
             if (sortArray4FL[i] == 5) {
                 document.getElementById("fifth").textContent = titleArray[i];
-                fifthAnswer = answerArray4FL[i];
+                fifthAnswer = answerArray[i];
             }
             if (sortArray4FL[i] == 6) {
                 document.getElementById("sixth").textContent = titleArray[i];
-                sixthAnswer = answerArray4FL[i];
+                sixthAnswer = answerArray[i];
             }
             if (sortArray4FL[i] == 7) {
                 document.getElementById("seventh").textContent = titleArray[i];
-                seventhAnswer = answerArray4FL[i];
+                seventhAnswer = answerArray[i];
             }
             if (sortArray4FL[i] == 8) {
                 document.getElementById("eighth").textContent = titleArray[i];
-                eighthAnswer = answerArray4FL[i];
+                eighthAnswer = answerArray[i];
             }
             if (sortArray4FL[i] == 9) {
                 document.getElementById("ninth").textContent = titleArray[i];
-                ninthAnswer = answerArray4FL[i];
+                ninthAnswer = answerArray[i];
             }
             if (sortArray4FL[i] == 10) {
                 document.getElementById("tenth").textContent = titleArray[i];
-                tenthAnswer = answerArray4FL[i];
+                tenthAnswer = answerArray[i];
             }
             if (sortArray4FL[i] == 11) {
                 document.getElementById("eleventh").textContent = titleArray[i];
-                eleventhAnswer = answerArray4FL[i];
+                eleventhAnswer = answerArray[i];
             }
             if (sortArray4FL[i] == 12) {
                 document.getElementById("twelfth").textContent = titleArray[i];
-                twelfthAnswer = answerArray4FL[i];
+                twelfthAnswer = answerArray[i];
             }
         }
         //
