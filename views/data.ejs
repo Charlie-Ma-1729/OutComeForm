@@ -101,9 +101,6 @@
     <div style="width: 90%;margin:10% 5% 10% 10% ">
         <canvas id="theChartFirst"></canvas>
     </div>
-    <div style="width: 90%;margin:10% 5% 10% 10% ">
-        <canvas id="theChartLast"></canvas>  
-    </div>
     <div style="width: 80%;margin:10%">
         <canvas id="theChart"></canvas>
     </div>
@@ -146,51 +143,74 @@
                 case '1':
                     document.getElementById("1st").textContent = subtitleArray[i];
                     document.getElementById("a1st").textContent = answerArray[i];
+                    firstAnswer = answerArray[i];
+                    //document.getElementById("first").textContent = sortArray[i];
                     break;
                 case '2':
                     document.getElementById("2nd").textContent = subtitleArray[i];
                     document.getElementById("a2nd").textContent = answerArray[i];
+                    secondAnswer = answerArray[i];
+                    //document.getElementById("second").textContent = sortArray[i];
                     break;
                 case '3':
                     document.getElementById("3rd").textContent = subtitleArray[i];
                     document.getElementById("a3rd").textContent = answerArray[i];
+                    thirdAnswer = answerArray[i];
+                    //document.getElementById("third").textContent = sortArray[i];
                     break;
                 case '4':
                     document.getElementById("4th").textContent = subtitleArray[i];
                     document.getElementById("a4th").textContent = answerArray[i];
+                    fourthAnswer = answerArray[i];
+                    //document.getElementById("fourth").textContent = sortArray[i];
                     break;
                 case '5':
                     document.getElementById("5th").textContent = subtitleArray[i];
                     document.getElementById("a5th").textContent = answerArray[i];
+                    fifthAnswer = answerArray[i];
+                    //document.getElementById("fifth").textContent = sortArray[i];
                     break;
                 case '6':
                     document.getElementById("6th").textContent = subtitleArray[i];
                     document.getElementById("a6th").textContent = answerArray[i];
+                    sixthAnswer = answerArray[i];
+                    //document.getElementById("sixth").textContent = sortArray[i];
                     break;
                 case '7':
                     document.getElementById("7th").textContent = subtitleArray[i];
                     document.getElementById("a7th").textContent = answerArray[i];
+                    seventhAnswer = answerArray[i];
+                    //document.getElementById("seventh").textContent = sortArray[i];
                     break;
                 case '8':
                     document.getElementById("8th").textContent = subtitleArray[i];
                     document.getElementById("a8th").textContent = answerArray[i];
+                    eighthAnswer = answerArray[i];
+                    //document.getElementById("eight").textContent = sortArray[i];
                     break;
                 case '9':
                     document.getElementById("9th").textContent = subtitleArray[i];
                     document.getElementById("a9th").textContent = answerArray[i];
+                    ninthAnswer = answerArray[i];
+                    //document.getElementById("ninth").textContent = sortArray[i];
                     break;
                 case '10':
                     document.getElementById("10th").textContent = subtitleArray[i];
                     document.getElementById("a10th").textContent = answerArray[i];
+                    tenthAnswer = answerArray[i];
+                    //document.getElementById("tenth").textContent = sortArray[i];
                     break;
-
                 case '11':
                     document.getElementById("11th").textContent = subtitleArray[i];
                     document.getElementById("a11th").textContent = answerArray[i];
+                    eleventhAnswer = answerArray[i];
+                    //document.getElementById("eleventh").textContent = sortArray[i];
                     break;
                 case '12':
                     document.getElementById("12th").textContent = subtitleArray[i];
                     document.getElementById("a12th").textContent = answerArray[i];
+                    twelfthAnswer = answerArray[i];
+                    //document.getElementById("twelfth").textContent = sortArray[i];
                     break;
             }
         }
@@ -249,22 +269,42 @@
         }
         */
 
-        const labelsFirstArray = [document.getElementById("1st").textContent, document.getElementById("2nd").textContent, document.getElementById("3rd").textContent, document.getElementById("4th").textContent.textContent, document.getElementById("5th").textContent.textContent, document.getElementById("6th").textContent.textContent, document.getElementById("7th").textContent.textContent, document.getElementById("8th").textContent.textContent, document.getElementById("9th").textContent.textContent, document.getElementById("10th").textContent.textContent, document.getElementById("11th").textContent.textContent, document.getElementById("12th").textContent];
+        const labelsFirstArray = titleArray;
+        //const labelsFirstArray = [document.getElementById("1st").textContent, document.getElementById("2nd").textContent, document.getElementById("3rd").textContent, document.getElementById("4th").textContent.textContent, document.getElementById("5th").textContent.textContent, document.getElementById("6th").textContent.textContent, document.getElementById("7th").textContent.textContent, document.getElementById("8th").textContent.textContent, document.getElementById("9th").textContent.textContent, document.getElementById("10th").textContent.textContent, document.getElementById("11th").textContent.textContent, document.getElementById("12th").textContent];
         //const labelsFirstArray = [document.getElementById("first").textContent, document.getElementById("second").textContent, document.getElementById("third").textContent, document.getElementById("fourth").textContent.textContent, document.getElementById("fifth").textContent.textContent, document.getElementById("sixth").textContent.textContent, document.getElementById("seventh").textContent.textContent, document.getElementById("eighth").textContent.textContent, document.getElementById("ninth").textContent.textContent, document.getElementById("tenth").textContent.textContent, document.getElementById("eleventh").textContent.textContent, document.getElementById("twelfth").textContent];
         const dataFirst = {
             labels: labelsFirstArray,
             datasets: [{
             label: '最急迫想要擁有的現況滿意評分',
-            data: [firstAnswer, secondAnswer, thirdAnswer],
+            data: [firstAnswer, secondAnswer, thirdAnswer, fourthAnswer, fifthAnswer, sixthAnswer, seventhAnswer, eighthAnswer, ninthAnswer, tenthAnswer, eleventhAnswer, twelfthAnswer],
+            //data: [firstAnswer, secondAnswer, thirdAnswer],
             backgroundColor: [
             'rgba(255, 99, 132, 0.2)',
             'rgba(255, 159, 64, 0.2)',
-            'rgba(255, 205, 86, 0.2)'
+            'rgba(255, 205, 86, 0.2)',
+            'rgba(75, 192, 192, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(153, 102, 255, 0.2)',
+            'rgba(201, 203, 207, 0.2)',
+            'rgba(153, 102, 255, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(75, 192, 192, 0.2)',
+            'rgba(201, 203, 207, 0.2)',
+            'rgba(201, 203, 207, 0.2)'
             ],
             borderColor: [
-            'rgb(255, 99, 132)',
-            'rgb(255, 159, 64)',
-            'rgb(255, 205, 86)'
+            'rgba(255, 99, 132, 0.2)',
+            'rgba(255, 159, 64, 0.2)',
+            'rgba(255, 205, 86, 0.2)',
+            'rgba(75, 192, 192, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(153, 102, 255, 0.2)',
+            'rgba(201, 203, 207, 0.2)',
+            'rgba(153, 102, 255, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(75, 192, 192, 0.2)',
+            'rgba(201, 203, 207, 0.2)',
+            'rgba(201, 203, 207, 0.2)'
             ],
             borderWidth: 1
             }]
@@ -286,40 +326,8 @@
             document.getElementById('theChartFirst'),
             configFirst
         );
+
         
-        const labelsLastArray = [document.getElementById("1st").textContent, document.getElementById("2nd").textContent, document.getElementById("3rd").textContent, document.getElementById("4th").textContent.textContent, document.getElementById("5th").textContent.textContent, document.getElementById("6th").textContent.textContent, document.getElementById("7th").textContent.textContent, document.getElementById("8th").textContent.textContent, document.getElementById("9th").textContent.textContent, document.getElementById("10th").textContent.textContent, document.getElementById("11th").textContent.textContent, document.getElementById("12th").textContent];
-        //const labelsLastArray = [document.getElementById("first").textContent, document.getElementById("second").textContent, document.getElementById("third").textContent, document.getElementById("fourth").textContent.textContent, document.getElementById("fifth").textContent.textContent, document.getElementById("sixth").textContent.textContent, document.getElementById("seventh").textContent.textContent, document.getElementById("eighth").textContent.textContent, document.getElementById("ninth").textContent.textContent, document.getElementById("tenth").textContent.textContent, document.getElementById("eleventh").textContent.textContent, document.getElementById("twelfth").textContent];
-        const dataLast = {
-            labels: labelsLastArray,
-            datasets: [{
-            label: '最不急迫想要擁有的現況滿意評分',
-            data: [twelfthAnswer, eleventhAnswer, tenthAnswer],
-            backgroundColor: [
-            'rgba(54, 162, 235, 0.2)',
-            'rgba(153, 102, 255, 0.2)',
-            'rgba(201, 203, 207, 0.2)'
-            ],
-            borderColor: [
-            'rgb(54, 162, 235)',
-            'rgb(153, 102, 255)',
-            'rgb(201, 203, 207)'
-            ],
-            borderWidth: 1
-            }]
-        };
-
-        const configLast = {
-            type: 'bar',
-            data: dataLast,
-            options: {
-                scales: {
-                    y: {
-                        beginAtZero: true
-                    }
-                }
-            },
-        };
-
         const labels = titleArray;
         const data = {
             labels: labels,
