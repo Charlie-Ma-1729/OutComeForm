@@ -12,8 +12,10 @@
 <body onload="startup()">
     <h1>您的回覆已送出</h1>
     <h3><%= user %>，您好：<br></h3>
-
     <h3>您今年<%= age %>歲，目前的工作內容為<%= career %>。</h3>
+
+    <!---<h3>您的排序如下：</h3>--->
+
     <h3>您的Outcome性格分析評估報告結果為：
         第一個最迫切想要擁有的目標是<b id="first"></b>，代表著您想<b id="firstcon"></b>
         第二個迫切想要擁有的目標是<b id="second"></b>，代表著您想<b id="secondcon"></b>
@@ -24,7 +26,7 @@
         第三個已經擁有且第三滿意的現況是<b id="tenth"></b>，代表著您想<b id="tenthcon"></b><br>
     </h3>
     <br>
-    <h3>若您欲了解更多，請和李品睿老師接洽，Email為：</h3>
+    <h3>若您欲了解更多，請和李品睿老師接洽，Email為：saccl201703@gmail.com</h3>
     <h3>下載本頁Outcome性格分析報告，將結果寄至我的Email（<%= email %>）：
         <a href="file/outcome.pdf" download="Outcome性格分析報告.pdf"></a>
     </h3>
@@ -64,8 +66,7 @@
     </div>
 
     <div style="width: 90%;margin:10% 5% 10% 10% ">
-        <canvas id="theChartLast"></canvas>
-    
+        <canvas id="theChartLast"></canvas>  
     </div>
     
     <div style="width: 90%;margin:10% 5% 10% 10% ">>
