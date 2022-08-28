@@ -119,6 +119,13 @@
             text-align: center;
             padding: 10px 0;
         }
+        .banner img{
+            width: 100%;
+            
+        }
+        .form{
+            font-size: 14px;
+        }
         
     </style>
 </head>
@@ -148,9 +155,11 @@
     </div><!--End of banner-->
     
     <form action="/login" align="center" method="post">
-        帳號<input type="text" name="username"><br>
-        密碼<input type="password" name="password"><br>
-        <input type="submit"value="登入"> 
+        <div class="form">
+            帳號<input type="text" name="username"><br>
+            密碼<input type="password" name="password"><br>
+            <input type="submit"value="登入"> 
+        </div>
     </form>
     
     <div class="footer">
