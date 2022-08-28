@@ -12,7 +12,6 @@
             list-style: none;
             background-color: #faf4f0;
         }
-        
         #menu_control{
             position: absolute;
             z-index: -2;
@@ -121,6 +120,7 @@
         }
         .banner img{
             width: 100%;
+            
         }
         .form{
             margin: 0 10px 20px; /*cellphone*/         
@@ -131,7 +131,9 @@
             display: flex;
             */
         }
-        
+        .baseData table{
+            border-color: transparent;
+        }
         .Example img{
             width: 95%;
         }
@@ -141,6 +143,7 @@
             border-radius: 8px;
             width: 90%;
         }
+        
         
         
     </style>
@@ -164,38 +167,63 @@
             <a href = "/loginPage" target = "_blank">擁有者登入</a>
             <a href="#">聯絡我們</a>            
         </nav>
-    </div>
+    </div><!--End of header-->
     
     <div class="banner">
-        <img src="https://img.onl/v7Uvxz" />
-    </div>
+        <img src="https://img.onl/v7Uvxz" />    
+    </div><!--End of banner-->
     
-    <div align="center">
+    <div class="mainForm" align="center">
         <form action="/response" method="post" name="Form" id="Form" onsubmit="event.preventDefault();inputCheck()">
-            <h1>Out Come性格分析測驗</h1>
-            
             <br>
+            <h1>Out Come性格分析測驗</h1>
+            <br>
+            <!-----
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-md-4">
+                        <div class="item">
+                            <input type="text" name="user" required="required" placeholder="姓名">
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <div class="item">
+                            <input type="number" name="age" required="required" placeholder="年齡">
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <div class="item">
+                            <th><input type="text" name="career" required="required" placeholder="如：學生、保險業務員">
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-12">
+                        <div class="item">
+                            <input type="text" name="email" required="required" placeholder="Email信箱">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            ----->
             
             <div class="baseData">
             <table border="1">
                 <tr>
                     <th>姓名</th>
-                    <th><input type="text" style="width:200px;" name="user" required="required"></th>
+                    <th><input type="text" style="width:200px;" name="user" required="required" placeholder="姓名"></th>
                 </tr>
                 <tr>
                     <th>年齡</th>
-                    <th><input type="number" style="width:200px;" name="age" required="required"></th>
+                    <th><input type="number" style="width:200px;" name="age" required="required" placeholder="年齡"></th>
                 </tr>
                 <tr>
                     <th>Email</th>
-                    <th><input type="text" style="width:200px;" name="email" required="required"></th>           
+                    <th><input type="email" style="width:200px;" name="email" required="required" placeholder="Email信箱"></th>           
                 </tr>
                 <tr>
-                    <th>工作<br>內容</th>
-                    <th><input type="text" style="width:200px;" name="career" required="required"></th>
+                    <th>工作內容</th>
+                    <th><input type="text" style="width:200px; border-color: #4d1213" name="career" required="required" placeholder="如：學生、保險業務員"></th>
                 </tr>   
             </table>
-            <p>(工作內容，如：學生、保險業務員)</p>
             </div><!--End of baseData-->
             
             <br>
@@ -749,6 +777,7 @@
     <div class="footer">
         &copy; copyright 2022 by
     </div>
+    
 </body>
 <script>
     function inputCheck() {
