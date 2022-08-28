@@ -4,10 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>回覆:<%= userdata.user %>
-    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+    <title>回覆:<%= userdata.user %></title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            background-color: #faf4f0;
+        }
+    </style>
 </head>
 <style>
     table {
@@ -98,9 +105,11 @@
             <td id="a12th"></td>
         </tr>
     </table>
+    <!---
     <div style="width: 90%;margin:10% 5% 10% 10% ">
         <canvas id="theChartFirst"></canvas>
     </div>
+    --->
     <div style="width: 80%;margin:10%">
         <canvas id="theChart"></canvas>
     </div>
@@ -215,7 +224,7 @@
             }
         }
 
-        
+        /*
         for (let i = 0; i < sortArray.length; i++) {
             if (sortArray[i] == 1) {
                 document.getElementById("first").textContent = titleArray[i];
@@ -326,7 +335,7 @@
             document.getElementById('theChartFirst'),
             configFirst
         );
-
+        */
 
         const labels = titleArray;
         const data = {
