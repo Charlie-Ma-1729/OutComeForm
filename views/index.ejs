@@ -10,6 +10,7 @@
             margin: 0;
             padding: 0;
             list-style: none;
+            background-color: #faf4f0;
         }
         
         #menu_control{
@@ -65,11 +66,12 @@
                         0px -8px 0px #aaa;
         }
         nav{
-            width: 80%;
+            width: 60%;
             height: calc(100vh - 50px);
             background-color: #ef5500;
+            opacity: 90%;
             position: absolute;
-            top: 50px;
+            top: 64px;
             left: -100%;
             transform: .5s;
         }
@@ -79,8 +81,10 @@
             color: #ffffff;
             padding: 10px 20px;
             border-bottom: 1px solid #ffffff;
+            background-color: #ef5500;
         }
-        #menu_control:checked ~ .header .nav{
+        
+        #menu_control:checked ~ .header nav{
             left: 0;
         }
         
@@ -119,8 +123,7 @@
             width: 100%;
         }
         .form{
-            margin: 0 10px 20px; /*cellphone*/
-            
+            margin: 0 10px 20px; /*cellphone*/         
             /*
             width: auto;
             height: auto;
@@ -128,8 +131,9 @@
             display: flex;
             */
         }
+        
         .Example img{
-            width: 100%;
+            width: 95%;
         }
         table {
             border: 0;
@@ -148,18 +152,17 @@
     <div class="header">
         <h1 class="logo">
             <a href="#"><img src="https://img.onl/gmtn4T"></a>
+            
         </h1> 
         <label for="menu_control" class="menu_btn"> <!--漢堡選單for手機-->
             <span>選單</span>
         </label>
         <nav>
-            <a href="#">link</a>
-            <a href="#">link</a>
-            <a href="#">link</a>
-            <a href="#">link</a>
-            <a href="#">link</a>
-            <a href="#">link</a>
-            
+            <a href="/">測驗開始</a>
+            <a href="#">Outcome介紹</a>
+            <a href="#">會員登入</a>
+            <a href = "/loginPage" target = "_blank">擁有者登入</a>
+            <a href="#">聯絡我們</a>            
         </nav>
     </div>
     
@@ -169,7 +172,7 @@
     
     <div align="center">
         <form action="/response" method="post" name="Form" id="Form" onsubmit="event.preventDefault();inputCheck()">
-            <h1>Out Come表單</h1>
+            <h1>Out Come性格分析測驗</h1>
             
             <br>
             
