@@ -251,6 +251,10 @@ app.get('/loginPage', (req, res) => {
     res.render('loginPage');
 });
 
+app.get('/signup', (req, res) => {
+    res.render('signup');
+});
+
 app.get('/contactus', (req, res) => {
     res.render('contactus');
 })
@@ -430,7 +434,8 @@ app.post('/datepick', function (req, res) {
         })
     }
     else {
-        res.redirect('/');
+        ////res.redirect('/');
+        res.redirect('/test');
     }
 });
 
