@@ -1,10 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="zh-tw">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
-    <title>註冊</title>
+    <title>測驗開始</title>
     <style type="text/css">
         *{
             margin: 0;
@@ -95,6 +95,9 @@
                 background-color: #ef5500;
                 align-items: center;
             }
+            .logo{
+                
+            }
             nav{
                 position: relative;
                 left: 0;
@@ -119,14 +122,40 @@
             width: 100%;
             
         }
+        .form{
+            margin: 0 10px 20px; /*cellphone*/         
+            /*
+            width: auto;
+            height: auto;
+            font-size-adjust: auto;
+            display: flex;
+            */
+        }
+        .baseData table{
+            border-color: transparent;
+        }
+        .Example img{
+            width: 95%;
+        }
+        table {
+            border: 0;
+            border-collapse: collapse;
+            border-radius: 8px;
+            width: 90%;
+        }
+        
+        
+        
     </style>
 </head>
+
 <body>
     <input type="checkbox" name="" id="menu_control"> <!--label可以從遠端控制他打勾或不要打勾--->
     
     <div class="header">
         <h1 class="logo">
             <a href="#"><img src="https://img.onl/gmtn4T"></a>
+            
         </h1> 
         <label for="menu_control" class="menu_btn"> <!--漢堡選單for手機-->
             <span>選單</span>
@@ -138,20 +167,516 @@
             <a href="/test">測驗開始</a>
             <a href = "/loginPage" target = "_blank">會員登入</a>
             <a href = "/signup">註冊</a>
-            <a href="/contactus">聯絡我們</a>           
+            <a href="/contactus">聯絡我們</a>            
         </nav>
     </div><!--End of header-->
     
     <div class="banner">
-        <!--- <img src="https://img.onl/v7Uvxz" /> --->    
+        <!--- <img src="https://img.onl/v7Uvxz" /> --->
     </div><!--End of banner-->
     
-    <div>
-        Sign Up!
+    <div class="mainForm" align="center">
+        <form action="/response" method="post" name="Form" id="Form" onsubmit="event.preventDefault();inputCheck()">
+            <br>
+            <h1>Outcome性格分析測驗</h1>
+            <br>
+            <!-----
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-md-4">
+                        <div class="item">
+                            <input type="text" name="user" required="required" placeholder="姓名">
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <div class="item">
+                            <input type="number" name="age" required="required" placeholder="年齡">
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <div class="item">
+                            <th><input type="text" name="career" required="required" placeholder="如：學生、保險業務員">
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-12">
+                        <div class="item">
+                            <input type="text" name="email" required="required" placeholder="Email信箱">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            ----->
+            
+            <div class="baseData">
+            <table border="1">
+                <tr>
+                    <th>姓名</th>
+                    <th><input type="text" style="width:200px;" name="user" required="required" placeholder="姓名"></th>
+                </tr>
+                <tr>
+                    <th>年齡</th>
+                    <th><input type="number" style="width:200px;" name="age" required="required" placeholder="年齡"></th>
+                </tr>
+                <tr>
+                    <th>Email</th>
+                    <th><input type="email" style="width:200px;" name="email" required="required" placeholder="Email信箱"></th>           
+                </tr>
+                <tr>
+                    <th>工作內容</th>
+                    <th><input type="text" style="width:200px; border-color: #4d1213" name="career" required="required" placeholder="如：學生、保險業務員"></th>
+                </tr>   
+            </table>
+            </div><!--End of baseData-->
+            
+            <br>
+            
+            <br>
+            <h2>測驗開始</h2>
+        <!----頭--->
+            <<table border="1">
+                <tr>
+                    <th>優先排序<br>(1~12)</th>
+                    <th>Outcome成果評量分析</th>
+                    <th>現況評分<br>(1~5分)</th>
+                </tr>
+                <tr>
+                    <!--獨立性-->
+                    <td>
+                        <select name="SortIndependence" id="SortIndependence" required="required">
+                            <option>填入1~12</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                        </select>
+                    </td>
+                    <td>獨立性/自由做你自己想做的事; 能擺脫他人影響</td>
+                    <td>
+                        <select name="answerIndependence" required="required">
+                            <option>填入1~5分</option>
+                            <option value="1">★</option>
+                            <option value="2">★★</option>
+                            <option value="3">★★★</option>
+                            <option value="4">★★★★</option>
+                            <option value="5">★★★★★</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <!--認同感-->
+                    <td>
+                        <select name="sortIdentity" id="sortIdentity" required="required">
+                            <option>填入1~12</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                        </select>
+                    </td>
+                    <td>認同感/成就被肯定，表現有獎勵。</td>
+                    <td>
+                        <select name="answerIdentity" required="required">
+                            <option>填入1~5分</option>
+                            <option value="1">★</option>
+                            <option value="2">★★</option>
+                            <option value="3">★★★</option>
+                            <option value="4">★★★★</option>
+                            <option value="5">★★★★★</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <!--成就感-->
+                    <td>
+                        <select name="sortAchievement" id="sortAchievement" required="required">
+                            <option>填入1~12</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                        </select>
+                    </td>
+                    <td> 成就感/成功完成工作，克服障礙，達成目標。</td>
+                    <td>
+                        <select name="answerAchievement" required="required">
+                            <option>填入1~5分</option>
+                            <option value="1">★</option>
+                            <option value="2">★★</option>
+                            <option value="3">★★★</option>
+                            <option value="4">★★★★</option>
+                            <option value="5">★★★★★</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <!--休閒時間-->
+                    <td>
+                        <select name="sortFreeTime" id="sortFreeTime" required="required">
+                            <option>填入1~12</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                        </select>
+                    </td>
+                    <td>休閒時間/從事工作以外你喜歡的休閒活動。</td>
+                    <td>
+                        <select name="answerFreeTime" required="required">
+                            <option>填入1~5分</option>
+                            <option value="1">★</option>
+                            <option value="2">★★</option>
+                            <option value="3">★★★</option>
+                            <option value="4">★★★★</option>
+                            <option value="5">★★★★★</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <!--權力-->
+                    <td>
+                        <select name="sortPower" id="sortPower" required="required">
+                            <option>填入1~12</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                        </select>
+                    </td>
+                    <td> 權力/控制別人; 影響、主控。</td>
+                    <td>
+                        <select name="answerPower" required="required">
+                            <option>填入1~5分</option>
+                            <option value="1">★</option>
+                            <option value="2">★★</option>
+                            <option value="3">★★★</option>
+                            <option value="4">★★★★</option>
+                            <option value="5">★★★★★</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <!--聲望-->
+                    <td>
+                        <select name="sortReputation" id="sortReputation" required="required">
+                            <option>填入1~12</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                        </select>
+                    </td>
+                    <td> 聲望/名聲、排行、受尊敬。</td>
+                    <td>
+                        <select name="answerReputation" required="required">
+                            <option>填入1~5分</option>
+                            <option value="1">★</option>
+                            <option value="2">★★</option>
+                            <option value="3">★★★</option>
+                            <option value="4">★★★★</option>
+                            <option value="5">★★★★★</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <!--金錢-->
+                    <td>
+                        <select name="sortMoney" id="sortMoney" required="required">
+                            <option>填入1~12</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                        </select>
+                    </td>
+                    <td> 金錢/個人所得的累積，五字登科的能力。</td>
+                    <td>
+                        <select name="answerMoney" required="required">
+                            <option>填入1~5分</option>
+                            <option value="1">★</option>
+                            <option value="2">★★</option>
+                            <option value="3">★★★</option>
+                            <option value="4">★★★★</option>
+                            <option value="5">★★★★★</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <!--推動力-->
+                    <td>
+                        <select name="sortExormisis" id="sortExormisis" required="required">
+                            <option>填入1~12</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                        </select>
+                    </td>
+                    <td> 推動力/要想一直改進工作表現的感覺或需要。</td>
+                    <td>
+                        <select name="answerExormisis" required="required">
+                            <option>填入1~5分</option>
+                            <option value="1">★</option>
+                            <option value="2">★★</option>
+                            <option value="3">★★★</option>
+                            <option value="4">★★★★</option>
+                            <option value="5">★★★★★</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <!--自尊-->
+                    <td>
+                        <select name="sortSelfEsteem" id="sortSelfEsteem" required="required">
+                            <option>填入1~12</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                        </select>
+                    </td>
+                    <td> 自尊/你覺得自己有價值的一種感覺，自主性強。</td>
+                    <td>
+                        <select name="answerSelfEsteem" required="required">
+                            <option>填入1~5分</option>
+                            <option value="1">★</option>
+                            <option value="2">★★</option>
+                            <option value="3">★★★</option>
+                            <option value="4">★★★★</option>
+                            <option value="5">★★★★★</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <!--家庭生活-->
+                    <td>
+                        <select name="sortFamily" id="sortFamily" required="required">
+                            <option>填入1~12</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                        </select>
+                    </td>
+                    <td> 家庭生活/偏好家庭為中心的活動與興趣。</td>
+                    <td>
+                        <select name="answerFamily" required="required">
+                            <option>填入1~5分</option>
+                            <option value="1">★</option>
+                            <option value="2">★★</option>
+                            <option value="3">★★★</option>
+                            <option value="4">★★★★</option>
+                            <option value="5">★★★★★</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <!--安全感-->
+                    <td>
+                        <select name="sortSafety" id="sortSafety" required="required">
+                            <option>填入1~12</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                        </select>
+                    </td>
+                    <td> 安全感/關切工作的安全與穩定、安定。</td>
+                    <td>
+                        <select name="answerSafety" required="required">
+                            <option>填入1~5分</option>
+                            <option value="1">★</option>
+                            <option value="2">★★</option>
+                            <option value="3">★★★</option>
+                            <option value="4">★★★★</option>
+                            <option value="5">★★★★★</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <!--個人成長-->
+                    <td>
+                        <select name="sortGrowth" id="sortGrowth" required="required">
+                            <option>填入1~12</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                        </select>
+                    </td>
+                    <td> 個人成長/能力及效率的發展，變成一個比較優秀的人。</td>
+                    <td>
+                        <select name="answerGrowth" required="required">
+                            <option>填入1~5分</option>
+                            <option value="1">★</option>
+                            <option value="2">★★</option>
+                            <option value="3">★★★</option>
+                            <option value="4">★★★★</option>
+                            <option value="5">★★★★★</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+            <br>
+            <br>
+        <!----底--->
+            <div class="sure">
+                <p><input type="submit" value="確認"></p>
+            </div>
+        </form>
     </div>
-    
+    <br>
+    <br>
+
     <div class="footer">
         &copy; copyright 2022 by
     </div>
+    
 </body>
+<script>
+    function inputCheck() {
+        let inputArr=[
+            document.getElementById('sortIndependence'),
+            document.getElementById('sortIdentity'),
+            document.getElementById('sortAchievement'),
+            document.getElementById('sortFreeTime'),
+            document.getElementById('sortPower'),
+            document.getElementById('sortReputation'),
+            document.getElementById('sortMoney'),
+            document.getElementById('sortExormisis'),
+            document.getElementById('sortSelfEsteem'),
+            document.getElementById('sortFamily'),
+            document.getElementById('sortSafety'),
+            document.getElementById('sortGrowth')
+        ]
+
+        //let inputArr = [
+        //document.forms["Form"]["sortIndependence"].value,
+        //document.forms["Form"]["sortIdentity"].value,
+        //document.forms["Form"]["sortAchievement"].value,
+        //document.forms["Form"]["sortFreeTime"].value,
+        //document.forms["Form"]["sortPower"].value,
+        //document.forms["Form"]["sortReputation"].value,
+        //document.forms["Form"]["sortMoney"].value,
+        //document.forms["Form"]["sortExormisis"].value,
+        //document.forms["Form"]["sortSelfEsteem"].value,
+        //document.forms["Form"]["sortFamily"].value,
+        //document.forms["Form"]["sortSafety"].value,
+        //document.forms["Form"]["sortGrowth"].value
+        //];
+
+        for(let i=0; i<inputArr.length; i++){
+            for(let j=0; j<inputArr.length; j++){
+                if(i!=j){
+                    if(inputArr[i] == inputArr[j]){
+                        alert("優先順序請勿重複!!");
+                        returnToPreviousPage();
+                        return false;
+                    }
+                }
+            }
+        }
+        Form.submit();
+        return true;
+    }
+
+
+
+</script>
+
 </html>
