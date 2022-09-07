@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="zh-tw">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+    <title>Out Come</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            background-color: #faf4f0;
+        }
+        #menu_control{
+            position: absolute;
+            z-index: -2;
+            opacity: 0;
+        }
+        .header{
+            height: 50%;
+            background-color: #ef5500;
+            position: relative;
+        }
+        .logo{
+            width: 60px;
+            height: 64px;
+            margin-left: 10px;
+        }
+        .logo a{
+            display: block;
+            height: 40px;
+        }
+        .logo img{
+            display: block;
+            width: 100%;
+        }
+        .menu_btn {
+            width: 40px;
+            height: 40px;
+            background-color: #000;
+            display: block;
+            position: absolute;
+            top: 5px;
+            right: 10px;
+        }
+        .menu_btn span{
+            opacity: 0;
+            width: 1px;
+            height: 1px;
+            display: block;
+            overflow: hidden; /*超出去的範圍會藏起來*/
+        }
+        .menu_btn::before{
+            content: '';
+            position: absolute;
+            height: 2px;
+            left: 2px;
+            width: 36px;
+            background-color: #aaa;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            box-shadow: 0px 8px 0px #aaa,
+                        0px -8px 0px #aaa;
+        }
+        nav{
+            width: 60%;
+            height: calc(100vh - 50px);
+            background-color: #ef5500;
+            opacity: 90%;
+            position: absolute;
+            top: 64px;
+            left: -100%;
+            transform: .5s;
+        }
+        nav a{
+            display: block;
+            text-decoration: none;
+            color: #ffffff;
+            padding: 10px 20px;
+            border-bottom: 1px solid #ffffff;
+            background-color: #ef5500;
+        }
+        
+        #menu_control:checked ~ .header nav{
+            left: 0;
+        }
+        
+        @media screen and (min-width:768px){
+            .menu_btn{ display: none; }
+            .header{
+                display: flex;
+                justify-content: space-between;
+                background-color: #ef5500;
+                align-items: center;
+            }
+            .logo{
+                
+            }
+            nav{
+                position: relative;
+                left: 0;
+                display: flex;
+                width: auto;
+                height: auto;
+                top: 0;
+                background-color: transparent;
+            }
+            nav a{
+                border-bottom: none;
+            }
+        }
+        
+        .footer{
+            background-color: #ef5500;
+            color: #ffffff;
+            text-align: center;
+            padding: 10px 0;
+        }
+        .banner img{
+            width: 100%;
+            
+        }
+        .form{
+            margin: 0 10px 20px; /*cellphone*/         
+            /*
+            width: auto;
+            height: auto;
+            font-size-adjust: auto;
+            display: flex;
+            */
+        }
+        .baseData table{
+            border-color: transparent;
+        }
+        .Example img{
+            width: 95%;
+        }
+        table {
+            border: 0;
+            border-collapse: collapse;
+            border-radius: 8px;
+            width: 90%;
+        }
+        
+        
+        
+    </style>
+</head>
+
+<body>
+    <input type="checkbox" name="" id="menu_control"> <!--label可以從遠端控制他打勾或不要打勾--->
+    
+    <div class="header">
+        <h1 class="logo">
+            <a href="#"><img src="https://img.onl/gmtn4T"></a>
+            
+        </h1> 
+        <label for="menu_control" class="menu_btn"> <!--漢堡選單for手機-->
+            <span>選單</span>
+        </label>
+        <nav>
+            <a href="/">首頁</a>
+            <a href="/illustrate">測驗說明</a>
+            <a href="/example">測驗範例</a>
+            <a href="/test">測驗開始</a>
+            <a href = "/loginPage" target = "_blank">會員登入</a>
+            <a href = "/signup">註冊</a>
+            <a href="/contactus">聯絡我們</a>            
+        </nav>
+    </div><!--End of header-->
+    
+    <div class="banner">
+        <img src="https://img.onl/v7Uvxz" />    
+    </div><!--End of banner-->
+
+    <div class="illustrate">
+        <h2>作答說明</h2>
+        <table border="1">
+            <tr>
+                <th>順序排列</th>
+                <th>代表著目前想要或擁有狀態的掌握</th>
+                <th>評分</th>
+            </tr>
+            <tr>
+                <td>1, 2, 3</td>
+                <td>代表目前最想要但是極度缺乏</td>
+                <td>僅能填3~5顆★</td>
+            </tr>
+            <tr>
+                <td>4, 5, 6</td>
+                <td>代表目前想擁有但可以等待</td>
+                <td>僅能填3~5顆★</td>
+            </tr>
+            <tr>
+                <td>7, 8, 9</td>
+                <td>代表或許不重要但是可以掌握</td>
+                <td>僅能填3~5顆★</td>
+            </tr>
+            <tr>
+                <td>10, 11, 12</td>
+                <td>代表已經擁有而不重要</td>
+                <td>僅能填3~5顆★</td>
+            </tr>
+        </table>
+        </div><!--End of illustrate-->
+        
+        <br>
+            
+    <div class="footer">
+        &copy; copyright 2022 by
+    </div>
+    
+</body>
+<script>
+
+
+</script>
+
+</html>
