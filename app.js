@@ -235,9 +235,26 @@ app.get('/', (req, res) => {
     res.render('index');
 });
 
+app.get('/illustrate', (req, res) => {
+    res.render('illustrate');
+})
+
+app.get('/example', (req, res) => {
+    res.render('example');
+})
+
+app.get('/test', (req, res) => {
+    res.render('test');
+})
+
 app.get('/loginPage', (req, res) => {
     res.render('loginPage');
 });
+
+app.get('/contactus', (req, res) => {
+    res.render('contactus');
+})
+
 
 app.post('/login', (req, res) => {
     console.log(JSON.stringify(req.body));
@@ -266,7 +283,10 @@ app.post('/response', async function (req, res) {
     let dd = String(today.getDate()).padStart(2, '0');
     let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
     let yyyy = today.getFullYear();
-    let date = yyyy + "/" + mm + "/" + dd;
+    ////let date = yyyy + "/" + mm + "/" + dd;
+
+    let date = yyyy + "/test" + mm + "/test" + dd;
+
     console.log(date);
     const newResponse = new ResponseData({
         user: req.body.user,
@@ -344,7 +364,8 @@ app.get('/responses', function (req, res) {
             if (err) {
                 console.log("token錯誤");
                 res.clearCookie('token');
-                res.redirect('/');
+                ////res.redirect('/');
+                res.redirect('/test');
                 //token過期判斷
             }
             else {
@@ -369,7 +390,8 @@ app.get('/responses', function (req, res) {
         })
     }
     else {
-        res.redirect('/');
+        ////res.redirect('/');
+        res.redirect('/loginPage');
     }
 });
 
@@ -380,7 +402,8 @@ app.post('/datepick', function (req, res) {
             if (err) {
                 console.log("token錯誤");
                 res.clearCookie('token');
-                res.redirect('/');
+                ////res.redirect('/');
+                res.redirect('/test');
                 //token過期判斷
             }
             else {
@@ -420,7 +443,8 @@ app.get('/data/:id',  (req, res) => {
             if (err) {
                 console.log("token錯誤");
                 res.clearCookie('token');
-                res.redirect('/');
+                ////res.redirect('/');
+                res.redirect('/test');
                 //token過期判斷
             }
             else {
@@ -433,7 +457,8 @@ app.get('/data/:id',  (req, res) => {
         })
     }
     else {
-        res.redirect('/');
+        ////res.redirect('/');
+        res.redirect('/test');
     }
 
 })
