@@ -95,9 +95,6 @@
                 background-color: #ef5500;
                 align-items: center;
             }
-            .logo{
-                
-            }
             nav{
                 position: relative;
                 left: 0;
@@ -161,11 +158,12 @@
             <span>選單</span>
         </label>
         <nav>
-            <a href="/">測驗開始</a>
-            <a href="#">Outcome介紹</a>
-            <a href="#">會員登入</a>
-            <a href = "/loginPage" target = "_blank">擁有者登入</a>
-            <a href="#">聯絡我們</a>            
+            <a href="/">首頁</a>
+            <a href="/example">測驗範例</a>
+            <a href="/test">測驗開始</a>
+            <a href = "/loginPage" target = "_blank">會員登入</a>
+            <a href = "/signup">註冊</a>
+            <a href="/contactus">聯絡我們</a>           
         </nav>
     </div><!--End of header-->
     
@@ -384,7 +382,7 @@
             <br>
             <h2>測驗開始</h2>
         <!----頭--->
-            <table border="1">
+            <<table border="1">
                 <tr>
                     <th>優先排序<br>(1~12)</th>
                     <th>Outcome成果評量分析</th>
@@ -395,29 +393,29 @@
                     <td>
                         <select name="SortIndependence" id="SortIndependence" required="required">
                             <option>填入1~12</option>
-                            <option :value=1>1</option>
-                            <option :value=2>2</option>
-                            <option :value=3>3</option>
-                            <option :value=4>4</option>
-                            <option :value=5>5</option>
-                            <option :value=6>6</option>
-                            <option :value=7>7</option>
-                            <option :value=8>8</option>
-                            <option :value=9>9</option>
-                            <option :value=10>10</option>
-                            <option :value=11>11</option>
-                            <option :value=12>12</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
                         </select>
                     </td>
                     <td>獨立性/自由做你自己想做的事; 能擺脫他人影響</td>
                     <td>
                         <select name="answerIndependence" required="required">
                             <option>填入1~5分</option>
-                            <option :value=1>★</option>
-                            <option :value=2>★★</option>
-                            <option :value=3>★★★</option>
-                            <option :value=4>★★★★</option>
-                            <option :value=5>★★★★★</option>
+                            <option value="1">★</option>
+                            <option value="2">★★</option>
+                            <option value="3">★★★</option>
+                            <option value="4">★★★★</option>
+                            <option value="5">★★★★★</option>
                         </select>
                     </td>
                 </tr>
@@ -426,29 +424,29 @@
                     <td>
                         <select name="sortIdentity" id="sortIdentity" required="required">
                             <option>填入1~12</option>
-                            <option :value=1>1</option>
-                            <option :value=2>2</option>
-                            <option :value=3>3</option>
-                            <option :value=4>4</option>
-                            <option :value=5>5</option>
-                            <option :value=6>6</option>
-                            <option :value=7>7</option>
-                            <option :value=8>8</option>
-                            <option :value=9>9</option>
-                            <option :value=10>10</option>
-                            <option :value=11>11</option>
-                            <option :value=12>12</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
                         </select>
                     </td>
                     <td>認同感/成就被肯定，表現有獎勵。</td>
                     <td>
                         <select name="answerIdentity" required="required">
                             <option>填入1~5分</option>
-                            <option :value=1>★</option>
-                            <option :value=2>★★</option>
-                            <option :value=3>★★★</option>
-                            <option :value=4>★★★★</option>
-                            <option :value=5>★★★★★</option>
+                            <option value="1">★</option>
+                            <option value="2">★★</option>
+                            <option value="3">★★★</option>
+                            <option value="4">★★★★</option>
+                            <option value="5">★★★★★</option>
                         </select>
                     </td>
                 </tr>
@@ -457,29 +455,29 @@
                     <td>
                         <select name="sortAchievement" id="sortAchievement" required="required">
                             <option>填入1~12</option>
-                            <option :value=1>1</option>
-                            <option :value=2>2</option>
-                            <option :value=3>3</option>
-                            <option :value=4>4</option>
-                            <option :value=5>5</option>
-                            <option :value=6>6</option>
-                            <option :value=7>7</option>
-                            <option :value=8>8</option>
-                            <option :value=9>9</option>
-                            <option :value=10>10</option>
-                            <option :value=11>11</option>
-                            <option :value=12>12</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
                         </select>
                     </td>
                     <td> 成就感/成功完成工作，克服障礙，達成目標。</td>
                     <td>
                         <select name="answerAchievement" required="required">
                             <option>填入1~5分</option>
-                            <option :value=1>★</option>
-                            <option :value=2>★★</option>
-                            <option :value=3>★★★</option>
-                            <option :value=4>★★★★</option>
-                            <option :value=5>★★★★★</option>
+                            <option value="1">★</option>
+                            <option value="2">★★</option>
+                            <option value="3">★★★</option>
+                            <option value="4">★★★★</option>
+                            <option value="5">★★★★★</option>
                         </select>
                     </td>
                 </tr>
@@ -488,29 +486,29 @@
                     <td>
                         <select name="sortFreeTime" id="sortFreeTime" required="required">
                             <option>填入1~12</option>
-                            <option :value=1>1</option>
-                            <option :value=2>2</option>
-                            <option :value=3>3</option>
-                            <option :value=4>4</option>
-                            <option :value=5>5</option>
-                            <option :value=6>6</option>
-                            <option :value=7>7</option>
-                            <option :value=8>8</option>
-                            <option :value=9>9</option>
-                            <option :value=10>10</option>
-                            <option :value=11>11</option>
-                            <option :value=12>12</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
                         </select>
                     </td>
                     <td>休閒時間/從事工作以外你喜歡的休閒活動。</td>
                     <td>
                         <select name="answerFreeTime" required="required">
                             <option>填入1~5分</option>
-                            <option :value=1>★</option>
-                            <option :value=2>★★</option>
-                            <option :value=3>★★★</option>
-                            <option :value=4>★★★★</option>
-                            <option :value=5>★★★★★</option>
+                            <option value="1">★</option>
+                            <option value="2">★★</option>
+                            <option value="3">★★★</option>
+                            <option value="4">★★★★</option>
+                            <option value="5">★★★★★</option>
                         </select>
                     </td>
                 </tr>
@@ -519,29 +517,29 @@
                     <td>
                         <select name="sortPower" id="sortPower" required="required">
                             <option>填入1~12</option>
-                            <option :value=1>1</option>
-                            <option :value=2>2</option>
-                            <option :value=3>3</option>
-                            <option :value=4>4</option>
-                            <option :value=5>5</option>
-                            <option :value=6>6</option>
-                            <option :value=7>7</option>
-                            <option :value=8>8</option>
-                            <option :value=9>9</option>
-                            <option :value=10>10</option>
-                            <option :value=11>11</option>
-                            <option :value=12>12</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
                         </select>
                     </td>
                     <td> 權力/控制別人; 影響、主控。</td>
                     <td>
                         <select name="answerPower" required="required">
                             <option>填入1~5分</option>
-                            <option :value=1>★</option>
-                            <option :value=2>★★</option>
-                            <option :value=3>★★★</option>
-                            <option :value=4>★★★★</option>
-                            <option :value=5>★★★★★</option>
+                            <option value="1">★</option>
+                            <option value="2">★★</option>
+                            <option value="3">★★★</option>
+                            <option value="4">★★★★</option>
+                            <option value="5">★★★★★</option>
                         </select>
                     </td>
                 </tr>
@@ -550,29 +548,29 @@
                     <td>
                         <select name="sortReputation" id="sortReputation" required="required">
                             <option>填入1~12</option>
-                            <option :value=1>1</option>
-                            <option :value=2>2</option>
-                            <option :value=3>3</option>
-                            <option :value=4>4</option>
-                            <option :value=5>5</option>
-                            <option :value=6>6</option>
-                            <option :value=7>7</option>
-                            <option :value=8>8</option>
-                            <option :value=9>9</option>
-                            <option :value=10>10</option>
-                            <option :value=11>11</option>
-                            <option :value=12>12</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
                         </select>
                     </td>
                     <td> 聲望/名聲、排行、受尊敬。</td>
                     <td>
                         <select name="answerReputation" required="required">
                             <option>填入1~5分</option>
-                            <option :value=1>★</option>
-                            <option :value=2>★★</option>
-                            <option :value=3>★★★</option>
-                            <option :value=4>★★★★</option>
-                            <option :value=5>★★★★★</option>
+                            <option value="1">★</option>
+                            <option value="2">★★</option>
+                            <option value="3">★★★</option>
+                            <option value="4">★★★★</option>
+                            <option value="5">★★★★★</option>
                         </select>
                     </td>
                 </tr>
@@ -581,29 +579,29 @@
                     <td>
                         <select name="sortMoney" id="sortMoney" required="required">
                             <option>填入1~12</option>
-                            <option :value=1>1</option>
-                            <option :value=2>2</option>
-                            <option :value=3>3</option>
-                            <option :value=4>4</option>
-                            <option :value=5>5</option>
-                            <option :value=6>6</option>
-                            <option :value=7>7</option>
-                            <option :value=8>8</option>
-                            <option :value=9>9</option>
-                            <option :value=10>10</option>
-                            <option :value=11>11</option>
-                            <option :value=12>12</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
                         </select>
                     </td>
                     <td> 金錢/個人所得的累積，五字登科的能力。</td>
                     <td>
                         <select name="answerMoney" required="required">
                             <option>填入1~5分</option>
-                            <option :value=1>★</option>
-                            <option :value=2>★★</option>
-                            <option :value=3>★★★</option>
-                            <option :value=4>★★★★</option>
-                            <option :value=5>★★★★★</option>
+                            <option value="1">★</option>
+                            <option value="2">★★</option>
+                            <option value="3">★★★</option>
+                            <option value="4">★★★★</option>
+                            <option value="5">★★★★★</option>
                         </select>
                     </td>
                 </tr>
@@ -612,29 +610,29 @@
                     <td>
                         <select name="sortExormisis" id="sortExormisis" required="required">
                             <option>填入1~12</option>
-                            <option :value=1>1</option>
-                            <option :value=2>2</option>
-                            <option :value=3>3</option>
-                            <option :value=4>4</option>
-                            <option :value=5>5</option>
-                            <option :value=6>6</option>
-                            <option :value=7>7</option>
-                            <option :value=8>8</option>
-                            <option :value=9>9</option>
-                            <option :value=10>10</option>
-                            <option :value=11>11</option>
-                            <option :value=12>12</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
                         </select>
                     </td>
                     <td> 推動力/要想一直改進工作表現的感覺或需要。</td>
                     <td>
                         <select name="answerExormisis" required="required">
                             <option>填入1~5分</option>
-                            <option :value=1>★</option>
-                            <option :value=2>★★</option>
-                            <option :value=3>★★★</option>
-                            <option :value=4>★★★★</option>
-                            <option :value=5>★★★★★</option>
+                            <option value="1">★</option>
+                            <option value="2">★★</option>
+                            <option value="3">★★★</option>
+                            <option value="4">★★★★</option>
+                            <option value="5">★★★★★</option>
                         </select>
                     </td>
                 </tr>
@@ -643,29 +641,29 @@
                     <td>
                         <select name="sortSelfEsteem" id="sortSelfEsteem" required="required">
                             <option>填入1~12</option>
-                            <option :value=1>1</option>
-                            <option :value=2>2</option>
-                            <option :value=3>3</option>
-                            <option :value=4>4</option>
-                            <option :value=5>5</option>
-                            <option :value=6>6</option>
-                            <option :value=7>7</option>
-                            <option :value=8>8</option>
-                            <option :value=9>9</option>
-                            <option :value=10>10</option>
-                            <option :value=11>11</option>
-                            <option :value=12>12</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
                         </select>
                     </td>
                     <td> 自尊/你覺得自己有價值的一種感覺，自主性強。</td>
                     <td>
                         <select name="answerSelfEsteem" required="required">
                             <option>填入1~5分</option>
-                            <option :value=1>★</option>
-                            <option :value=2>★★</option>
-                            <option :value=3>★★★</option>
-                            <option :value=4>★★★★</option>
-                            <option :value=5>★★★★★</option>
+                            <option value="1">★</option>
+                            <option value="2">★★</option>
+                            <option value="3">★★★</option>
+                            <option value="4">★★★★</option>
+                            <option value="5">★★★★★</option>
                         </select>
                     </td>
                 </tr>
@@ -674,29 +672,29 @@
                     <td>
                         <select name="sortFamily" id="sortFamily" required="required">
                             <option>填入1~12</option>
-                            <option :value=1>1</option>
-                            <option :value=2>2</option>
-                            <option :value=3>3</option>
-                            <option :value=4>4</option>
-                            <option :value=5>5</option>
-                            <option :value=6>6</option>
-                            <option :value=7>7</option>
-                            <option :value=8>8</option>
-                            <option :value=9>9</option>
-                            <option :value=10>10</option>
-                            <option :value=11>11</option>
-                            <option :value=12>12</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
                         </select>
                     </td>
                     <td> 家庭生活/偏好家庭為中心的活動與興趣。</td>
                     <td>
                         <select name="answerFamily" required="required">
                             <option>填入1~5分</option>
-                            <option :value=1>★</option>
-                            <option :value=2>★★</option>
-                            <option :value=3>★★★</option>
-                            <option :value=4>★★★★</option>
-                            <option :value=5>★★★★★</option>
+                            <option value="1">★</option>
+                            <option value="2">★★</option>
+                            <option value="3">★★★</option>
+                            <option value="4">★★★★</option>
+                            <option value="5">★★★★★</option>
                         </select>
                     </td>
                 </tr>
@@ -705,29 +703,29 @@
                     <td>
                         <select name="sortSafety" id="sortSafety" required="required">
                             <option>填入1~12</option>
-                            <option :value=1>1</option>
-                            <option :value=2>2</option>
-                            <option :value=3>3</option>
-                            <option :value=4>4</option>
-                            <option :value=5>5</option>
-                            <option :value=6>6</option>
-                            <option :value=7>7</option>
-                            <option :value=8>8</option>
-                            <option :value=9>9</option>
-                            <option :value=10>10</option>
-                            <option :value=11>11</option>
-                            <option :value=12>12</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
                         </select>
                     </td>
                     <td> 安全感/關切工作的安全與穩定、安定。</td>
                     <td>
                         <select name="answerSafety" required="required">
                             <option>填入1~5分</option>
-                            <option :value=1>★</option>
-                            <option :value=2>★★</option>
-                            <option :value=3>★★★</option>
-                            <option :value=4>★★★★</option>
-                            <option :value=5>★★★★★</option>
+                            <option value="1">★</option>
+                            <option value="2">★★</option>
+                            <option value="3">★★★</option>
+                            <option value="4">★★★★</option>
+                            <option value="5">★★★★★</option>
                         </select>
                     </td>
                 </tr>
@@ -736,33 +734,34 @@
                     <td>
                         <select name="sortGrowth" id="sortGrowth" required="required">
                             <option>填入1~12</option>
-                            <option :value=1>1</option>
-                            <option :value=2>2</option>
-                            <option :value=3>3</option>
-                            <option :value=4>4</option>
-                            <option :value=5>5</option>
-                            <option :value=6>6</option>
-                            <option :value=7>7</option>
-                            <option :value=8>8</option>
-                            <option :value=9>9</option>
-                            <option :value=10>10</option>
-                            <option :value=11>11</option>
-                            <option :value=12>12</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
                         </select>
                     </td>
                     <td> 個人成長/能力及效率的發展，變成一個比較優秀的人。</td>
                     <td>
                         <select name="answerGrowth" required="required">
                             <option>填入1~5分</option>
-                            <option :value=1>★</option>
-                            <option :value=2>★★</option>
-                            <option :value=3>★★★</option>
-                            <option :value=4>★★★★</option>
-                            <option :value=5>★★★★★</option>
+                            <option value="1">★</option>
+                            <option value="2">★★</option>
+                            <option value="3">★★★</option>
+                            <option value="4">★★★★</option>
+                            <option value="5">★★★★★</option>
                         </select>
                     </td>
                 </tr>
             </table>
+            <br>
             <br>
         <!----底--->
             <div class="sure">
